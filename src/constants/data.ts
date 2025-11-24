@@ -22,7 +22,7 @@ export const SKILLS = [
   },
   {
     category: 'Backend',
-    skills: ['Node.js', 'API REST', 'Java'],
+    skills: ['JavaScript', 'Node.js',  ],
   },
   {
     category: 'Database',
@@ -34,7 +34,7 @@ export const SKILLS = [
   },
   {
     category: 'Conceitos',
-    skills: ['POO', 'CRUD', 'Scrum'],
+    skills: ['CRUD', 'Scrum'],
   },
   {
     category: 'Soft Skills',
@@ -56,6 +56,21 @@ export const PROJECTS = [
     ],
     technologies: ['React Native', 'Expo', 'JavaScript', 'Android', 'EAS Build'],
     githubUrl: 'https://github.com/DanielAzeved0/Simpliza-TCC',
+  },
+  {
+    id: 'trabalho-pamii',
+    title: 'Lista de Compras Mobile',
+    badge: '📱 Projeto Acadêmico',
+    description: 'Aplicativo mobile completo de lista de compras desenvolvido durante a disciplina de Programação de Aplicações Móveis II. Sistema robusto com autenticação Firebase, sincronização em tempo real e interface moderna para gerenciar listas de compras de forma eficiente.',
+    features: [
+      ' Perfil do usuário com edição de dados',
+      ' Tema claro e escuro (toggle)',
+      ' Design responsivo e interface moderna',
+      ' Sincronização em tempo real (Firebase Database)',
+      ' Cálculo automático do valor total da lista',
+    ],
+    technologies: ['React Native', 'Expo', 'Firebase Auth', 'Firebase Database', 'JavaScript', ],
+    githubUrl: 'https://github.com/Eduardomarinho19/trabalho-pamii',
   },
 ];
 

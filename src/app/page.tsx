@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import SkillCard from '@/components/SkillCard';
 import ProjectCard from '@/components/ProjectCard';
@@ -71,7 +72,7 @@ export default function Home() {
       <section id="projects" className={`${SECTION_STYLES.container} bg-[#E0E0E0]`}>
         <div className="max-w-6xl mx-auto">
           <h2 className={SECTION_STYLES.title}>Projetos</h2>
-          <div className="mb-12">
+          <div className="mb-12 space-y-12">
             {PROJECTS.map((project) => (
               <ProjectCard
                 key={project.id}
@@ -186,7 +187,7 @@ export default function Home() {
               LinkedIn
             </a>
             <a 
-              href="#contact" 
+              href={`mailto:${PERSONAL_INFO.email}?subject=Contato do Portfolio&body=Olá Daniel,%0D%0A%0D%0AEstou interessado em conversar sobre...`}
               className="flex items-center gap-2 px-6 py-3 bg-[#00B0FF] text-white rounded-full font-semibold hover:bg-[#4A90E2] transition-all"
               aria-label="Enviar mensagem"
             >

@@ -22,7 +22,7 @@ export const SKILLS = [
   },
   {
     category: 'Backend',
-    skills: ['JavaScript', 'Node.js',  ],
+    skills: ['JavaScript', 'Node.js', 'Express.js' ],
   },
   {
     category: 'Database',

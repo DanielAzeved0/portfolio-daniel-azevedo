@@ -18,7 +18,7 @@ export const COLORS = {
 // Classes Tailwind reutilizáveis
 export const BUTTON_STYLES = {
   primary: 'px-8 py-3 bg-[#00B0FF] text-white rounded-full font-semibold hover:bg-[#4A90E2] hover:shadow-lg hover:shadow-[#00B0FF]/50 transition-all',
-  outline: 'px-8 py-3 border-2 border-[#00B0FF] text-[#00B0FF] rounded-full font-semibold hover:bg-[#00B0FF]/10 transition-all',
+  outline: 'px-8 py-3 border-2 border-[#4A90E2] bg-[#F5F5F5] text-[#333333] rounded-full font-semibold hover:bg-white hover:border-[#00B0FF] hover:shadow-lg transition-all',
   ghost: 'flex items-center gap-2 px-6 py-3 bg-transparent border border-[#E0E0E0] rounded-full text-[#E0E0E0] hover:border-[#4A90E2] hover:text-[#4A90E2] transition-all',
 };
 

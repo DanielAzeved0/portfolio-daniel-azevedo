@@ -58,6 +58,23 @@ export const PROJECTS = [
     githubUrl: 'https://github.com/DanielAzeved0/Simpliza-TCC',
   },
   {
+    id: 'deeparchive-bridge',
+    title: 'DeepArchive-Bridge',
+    badge: '🗄️ Backend/API',
+    description: 'Uma API robusta desenvolvida em .NET 8 que implementa um sistema inteligente de armazenamento em camadas (Hot/Cold Storage) para otimizar o gerenciamento de dados de vendas. O sistema automatiza o arquivamento de dados antigos (>90 dias) para armazenamento em frio, mantendo dados recentes em acesso rápido no banco de dados quente.',
+    features: [
+      'Gerenciamento automático de vendas - CRUD completo',
+      'Arquivamento inteligente com dados de mais de 90 dias',
+      'Hot Storage: PostgreSQL com acesso rápido para dados recentes',
+      'Cold Storage: Armazenamento de arquivo para dados históricos',
+      'API RESTful com Swagger UI',
+      'Injeção de Dependências com arquitetura desacoplada',
+      'Docker Compose para ambiente de desenvolvimento',
+    ],
+    technologies: ['.NET 8.0', 'C#', 'PostgreSQL', 'Entity Framework Core', 'Docker', 'Swagger'],
+    githubUrl: 'https://github.com/DanielAzeved0/DeepArchive-Bridge',
+  },
+  {
     id: 'trabalho-pamii',
     title: 'Lista de Compras Mobile',
     badge: '📱 Projeto Acadêmico',
@@ -81,6 +98,20 @@ export const EDUCATION = {
 };
 
 export const CERTIFICATIONS = [
+  {
+    id: 'csharp-primeira-aplicacao',
+    title: 'C#: Criando Sua Primeira Aplicação',
+    institution: 'Alura',
+    date: '2026',
+    icon: '💻',
+  },
+  {
+    id: 'csharp-orientacao-objetos',
+    title: 'C#: Aplicando a Orientação a Objetos',
+    institution: 'Alura',
+    date: '2026',
+    icon: '🔧',
+  },
   {
     id: 'cisco-networking',
     title: 'Conceitos Básicos de Redes',

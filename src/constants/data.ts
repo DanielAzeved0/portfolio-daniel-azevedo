@@ -18,19 +18,19 @@ export const ABOUT_TEXT = {
 export const SKILLS = [
   {
     category: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'HTML5', 'CSS3'],
+    skills: ['React', 'Next.js', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'React Native',  'Bootstrap'],
   },
   {
     category: 'Backend',
-    skills: ['JavaScript', 'Node.js', 'Express.js' ],
+    skills: ['JavaScript', 'Node.js', 'Express.js', 'Expo', '.NET 8', 'C#'],
   },
   {
     category: 'Database',
-    skills: ['MySQL', 'MongoDB', 'FireBase'],
+    skills: ['MySQL', 'MongoDB', 'FireBase', 'PostgreSQL', 'SQLite'],
   },
   {
     category: 'Tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Cypress', 'Postman'],
+    skills: ['Git', 'GitHub', 'VS Code', 'Cypress', 'Postman', 'Docker', 'Swagger', 'EAS Build'],
   },
   {
     category: 'Conceitos',
@@ -38,7 +38,7 @@ export const SKILLS = [
   },
   {
     category: 'Soft Skills',
-    skills: ['Trabalho em equipe', 'Comunicação', 'Resolução de problemas', 'Criatividade'],
+    skills: ['Trabalho em equipe', 'Comunicação', 'Resolução de problemas', 'Criatividade', 'Adaptabilidade'],
   },
 ];
 
@@ -60,18 +60,18 @@ export const PROJECTS = [
   {
     id: 'deeparchive-bridge',
     title: 'DeepArchive-Bridge',
-    badge: '🗄️ Full Stack',
-    description: 'Sistema full stack para gerenciamento de vendas, desenvolvido com backend em ASP.NET Core 8 e frontend em Next.js. A aplicação centraliza o CRUD de vendas, filtros por período, cliente e status, autenticação JWT e uma camada de arquivamento lógico que identifica vendas antigas sem remover dados da base ativa.',
+    badge: '🗄️ Projeto Pessoal',
+    description: 'Monorepo com backend em .NET 8 e frontend em Next.js 16 para gerenciamento de vendas com uma camada de arquivamento lógico sobre SQLite. O sistema oferece uma API RESTful para operações CRUD, armazenamento inteligente de dados e uma interface moderna para visualização e gerenciamento de vendas.',
     features: [
-      'CRUD completo de vendas',
-      'Busca por período, cliente, status e paginação',
-      'Aprovação de vendas pendentes',
-      'Autenticação JWT integrada ao frontend',
-      'Dashboard e telas de listagem, criação, edição e detalhes',
-      'Arquivamento lógico para vendas com mais de 90 dias',
-      'Health check da API e integração via Axios',
+      'Gerenciamento automático de vendas - CRUD completo',
+      'Arquivamento inteligente com dados de mais de 90 dias',
+      'Hot Storage: SQlite com acesso rápido para dados recentes',
+      'Cold Storage: Armazenamento de arquivo para dados históricos',
+      'API RESTful com Swagger UI',
+      'Injeção de Dependências com arquitetura desacoplada',
+      'Docker Compose para ambiente de desenvolvimento',
     ],
-    technologies: ['ASP.NET Core 8', 'C# 12', 'Entity Framework Core 8', 'SQLite', 'JWT Bearer', 'Next.js 16', 'React 18', 'TypeScript', 'Tailwind CSS', 'Axios'],
+    technologies: ['.NET 8.0', 'C#', 'PostgreSQL', 'Entity Framework Core', 'Docker', 'Swagger'],
     githubUrl: 'https://github.com/DanielAzeved0/DeepArchive-Bridge',
   },
   {
@@ -99,67 +99,18 @@ export const EDUCATION = {
 
 export const CERTIFICATIONS = [
   {
-    id: 'logica-programacao-javascript',
-    title: 'Lógica de Programação: Mergulhe em Programação com JavaScript',
-    institution: 'Alura',
-    date: '04 de fevereiro de 2026',
-    duration: '6 horas',
-    icon: '💻',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/logica-programacao-mergulhe-programacao-javascript/certificate',
-  },
-  {
-    id: 'logica-programacao-funcoes-listas',
-    title: 'Lógica de Programação: Explore Funções e Listas',
-    institution: 'Alura',
-    date: '13 de fevereiro de 2026',
-    duration: '6 horas',
-    icon: '🧠',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/logica-programacao-funcoes-listas/certificate',
-  },
-  {
-    id: 'git-github-colaborando-projetos',
-    title: 'Git e GitHub: Compartilhando e Colaborando em Projetos',
-    institution: 'Alura',
-    date: '14 de fevereiro de 2026',
-    duration: '8 horas',
-    icon: '🔀',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/git-github-compartilhando-colaborando-projetos/certificate',
-  },
-  {
-    id: 'logica-programacao-praticando-desafios',
-    title: 'Lógica de Programação: Praticando com Desafios',
-    institution: 'Alura',
-    date: '11 de março de 2026',
-    duration: '8 horas',
-    icon: '🎯',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/logica-programacao-praticando-desafios/certificate',
-  },
-  {
     id: 'csharp-primeira-aplicacao',
     title: 'C#: Criando Sua Primeira Aplicação',
     institution: 'Alura',
-    date: '12 de março de 2026',
-    duration: '8 horas',
+    date: '2026',
     icon: '💻',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-criando-primeira-aplicacao/certificate',
   },
   {
     id: 'csharp-orientacao-objetos',
     title: 'C#: Aplicando a Orientação a Objetos',
     institution: 'Alura',
-    date: '15 de março de 2026',
-    duration: '8 horas',
+    date: '2026',
     icon: '🔧',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-aplicando-orientacao-objetos/certificate',
-  },
-  {
-    id: 'csharp-excecoes-aplicacoes-resilientes',
-    title: 'C# e Exceções: Construa Aplicações Resilientes',
-    institution: 'Alura',
-    date: '24 de março de 2026',
-    duration: '8 horas',
-    icon: '🛡️',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-excecoes-construa-aplicacoes-resilientes/certificate',
   },
   {
     id: 'cisco-networking',

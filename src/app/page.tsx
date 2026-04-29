@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import SkillCard from '@/components/SkillCard';
 import ProjectCard from '@/components/ProjectCard';
+import CertificateCarousel from '@/components/CertificateCarousel';
 import { PERSONAL_INFO, ABOUT_TEXT, SKILLS, PROJECTS, EDUCATION, CERTIFICATIONS } from '@/constants/data';
 import { BUTTON_STYLES, SECTION_STYLES } from '@/constants/theme';
 
@@ -117,27 +117,7 @@ export default function Home() {
           {/* Certificações */}
           <div>
             <h3 className="text-2xl font-bold text-[#333333] mb-6">Certificações</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {CERTIFICATIONS.map((cert) => (
-                <div 
-                  key={cert.id}
-                  className="bg-white p-6 rounded-xl border-2 border-[#333333]/20 hover:border-[#00B0FF] transition-all hover:shadow-lg"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="text-4xl">{cert.icon}</div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-[#333333] mb-2">
-                        {cert.title}
-                      </h4>
-                      <p className="text-[#4A90E2] font-semibold mb-1">
-                        {cert.institution}
-                      </p>
-                      <p className="text-[#333333] text-sm">{cert.date}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <CertificateCarousel certifications={CERTIFICATIONS} />
           </div>
         </div>
       </section>

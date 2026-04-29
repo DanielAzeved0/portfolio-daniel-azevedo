@@ -22,6 +22,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   const dragState = useRef({ active: false, startX: 0, scrollLeft: 0 });
   const [activeIndex, setActiveIndex] = useState(0);
   const [cursor, setCursor] = useState({ visible: false, x: 0, y: 0, dragging: false });
+  const [selectedCertificate, setSelectedCertificate] = useState<Certification | null>(null);
 
   const maxIndex = Math.max(certifications.length - 1, 0);
 
@@ -52,6 +53,24 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
       window.removeEventListener('resize', updateActiveSlide);
     };
   }, []);
+
+  useEffect(() => {
+    if (!selectedCertificate) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedCertificate(null);
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [selectedCertificate]);
 
   const scrollToSlide = (index: number) => {
     const track = trackRef.current;
@@ -184,12 +203,16 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
                 <p className="mb-1 font-semibold text-[#4A90E2]">{cert.institution}</p>
                 <p className="text-sm text-[#333333]/75">Finalizado em {cert.date}</p>
                 {cert.certificateUrl && (
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#00B0FF]">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedCertificate(cert)}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#00B0FF] transition-colors hover:text-[#4A90E2]"
+                  >
                     Ver certificado
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8M17 7v9" />
                     </svg>
-                  </span>
+                  </button>
                 )}
               </div>
             </article>
@@ -202,19 +225,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
               className="w-[86%] flex-none snap-center sm:w-[58%] lg:w-[38%]"
               aria-current={activeIndex === index ? 'true' : undefined}
             >
-              {cert.certificateUrl ? (
-                <a
-                  href={cert.certificateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full"
-                  draggable={false}
-                >
-                  {content}
-                </a>
-              ) : (
-                content
-              )}
+              {content}
             </div>
           );
         })}
@@ -233,6 +244,72 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
           />
         ))}
       </div>
+
+      {selectedCertificate && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#333333]/80 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="certificate-modal-title"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              setSelectedCertificate(null);
+            }
+          }}
+        >
+          <div className="flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
+            <div className="flex items-start justify-between gap-4 border-b border-[#333333]/10 p-5">
+              <div>
+                <p className="mb-1 text-sm font-bold uppercase text-[#4A90E2]">
+                  Certificado digital
+                </p>
+                <h4 id="certificate-modal-title" className="text-xl font-bold leading-tight text-[#333333]">
+                  {selectedCertificate.title}
+                </h4>
+                <p className="mt-1 text-sm text-[#333333]/70">
+                  {selectedCertificate.institution} · {selectedCertificate.date}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedCertificate(null)}
+                className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-full border border-[#333333]/20 text-[#333333] transition-all hover:border-[#00B0FF] hover:text-[#00B0FF]"
+                aria-label="Fechar certificado"
+              >
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="h-[70vh] bg-[#E0E0E0]">
+              <iframe
+                src={selectedCertificate.certificateUrl}
+                title={`Certificado ${selectedCertificate.title}`}
+                className="h-full w-full border-0"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#333333]/10 p-5">
+              <p className="text-sm text-[#333333]/70">
+                Se a visualização não carregar, abra o certificado diretamente na Alura.
+              </p>
+              <a
+                href={selectedCertificate.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#00B0FF] px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-[#4A90E2]"
+              >
+                Abrir na Alura
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8M17 7v9" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

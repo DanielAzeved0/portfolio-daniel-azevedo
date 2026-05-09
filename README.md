@@ -10,7 +10,7 @@ O foco deste portfolio e funcionar como uma vitrine profissional para recrutador
 
 Repositorio: [github.com/DanielAzeved0/portfolio-daniel-azevedo](https://github.com/DanielAzeved0/portfolio-daniel-azevedo)
 
-Deploy: adicione aqui a URL publicada na Vercel quando o projeto estiver online.
+Deploy: [Link do Portfolio na Vercel](https://portfolio-daniel-azevedo-q5qi.vercel.app)
 
 Para visualizar localmente:
 

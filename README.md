@@ -17,7 +17,11 @@ O foco deste portfólio é funcionar como uma vitrine profissional para recrutad
 - Deploy: [portfolio-daniel-azevedo-q5qi.vercel.app](https://portfolio-daniel-azevedo-q5qi.vercel.app)
 - Repositório: [github.com/DanielAzeved0/portfolio-daniel-azevedo](https://github.com/DanielAzeved0/portfolio-daniel-azevedo)
 
-> Para adicionar um screenshot ao README, salve uma imagem em `public/portfolio-preview.png` e referencie-a nesta seção.
+Para adicionar uma imagem de preview ao README, salve um screenshot em `public/portfolio-preview.png` e inclua a linha abaixo nesta seção:
+
+```md
+![Preview do portfólio](./public/portfolio-preview.png)
+```
 
 ---
 
@@ -25,13 +29,14 @@ O foco deste portfólio é funcionar como uma vitrine profissional para recrutad
 
 - Página única com navegação por seções.
 - Menu fixo com versão responsiva para dispositivos móveis.
+- Menu mobile com suporte a fechamento por clique e tecla `Escape`.
 - Seção de apresentação com chamadas para projetos, contato e currículo.
 - Área "Sobre Mim" com resumo profissional.
 - Listagem de habilidades técnicas organizadas por categoria.
 - Cards de projetos com descrição, funcionalidades, tecnologias e links externos.
 - Seção de formação acadêmica.
-- Carrossel interativo de certificações.
-- Modal para visualização digital dos certificados.
+- Carrossel interativo de certificações com setas, indicadores e arraste.
+- Certificados abertos em nova guia pela ação "Ver certificado".
 - Links diretos para email, GitHub e LinkedIn.
 - Layout responsivo para desktop, tablet e mobile.
 
@@ -54,34 +59,34 @@ O foco deste portfólio é funcionar como uma vitrine profissional para recrutad
 
 ```text
 portfolio-daniel-azevedo/
-├── public/
-├── src/
-│   ├── app/
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── components/
-│   │   ├── sections/
-│   │   │   ├── AboutSection.tsx
-│   │   │   ├── ContactSection.tsx
-│   │   │   ├── EducationSection.tsx
-│   │   │   ├── Footer.tsx
-│   │   │   ├── HeroSection.tsx
-│   │   │   ├── ProjectsSection.tsx
-│   │   │   └── SkillsSection.tsx
-│   │   ├── CertificateCarousel.tsx
-│   │   ├── Navigation.tsx
-│   │   ├── ProjectCard.tsx
-│   │   └── SkillCard.tsx
-│   ├── constants/
-│   │   ├── data.ts
-│   │   └── theme.ts
-│   └── types/
-│       └── portfolio.ts
-├── next.config.ts
-├── package.json
-├── postcss.config.mjs
-└── tsconfig.json
+|-- public/
+|-- src/
+|   |-- app/
+|   |   |-- globals.css
+|   |   |-- layout.tsx
+|   |   `-- page.tsx
+|   |-- components/
+|   |   |-- sections/
+|   |   |   |-- AboutSection.tsx
+|   |   |   |-- ContactSection.tsx
+|   |   |   |-- EducationSection.tsx
+|   |   |   |-- Footer.tsx
+|   |   |   |-- HeroSection.tsx
+|   |   |   |-- ProjectsSection.tsx
+|   |   |   `-- SkillsSection.tsx
+|   |   |-- CertificateCarousel.tsx
+|   |   |-- Navigation.tsx
+|   |   |-- ProjectCard.tsx
+|   |   `-- SkillCard.tsx
+|   |-- constants/
+|   |   |-- data.ts
+|   |   `-- theme.ts
+|   `-- types/
+|       `-- portfolio.ts
+|-- next.config.ts
+|-- package.json
+|-- postcss.config.mjs
+`-- tsconfig.json
 ```
 
 ---
@@ -101,7 +106,8 @@ Reunir em um único lugar as principais informações sobre minha formação, ha
 - Projeto configurado com **TypeScript strict**.
 - SEO configurado com metadata, Open Graph e Twitter Card.
 - Carrossel de certificados com navegação por botões, indicadores e arraste.
-- Modal acessível para visualização de certificados digitais.
+- Links de certificados externos abertos em nova guia.
+- Navegação mobile com atributos ARIA e suporte à tecla `Escape`.
 - Estrutura simples, escalável e fácil de manter.
 
 ---
@@ -181,6 +187,22 @@ Depois, acesse:
 
 ```text
 http://localhost:3000
+```
+
+---
+
+## Validação
+
+Para validar tipagem e build de produção:
+
+```bash
+npm run check
+```
+
+Para executar apenas a checagem de TypeScript:
+
+```bash
+npm run type-check
 ```
 
 ---

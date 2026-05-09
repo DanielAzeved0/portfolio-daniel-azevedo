@@ -10,9 +10,10 @@ interface CertificateCarouselProps {
 
 export default function CertificateCarousel({ certifications }: CertificateCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const dragState = useRef({ active: false, startX: 0, scrollLeft: 0 });
+  const dragState = useRef({ active: false, dragging: false, startX: 0, scrollLeft: 0 });
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const dragThreshold = 8;
   const maxIndex = Math.max(certifications.length - 1, 0);
 
   useEffect(() => {
@@ -63,9 +64,11 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     const track = trackRef.current;
     if (!track || (event.pointerType === 'mouse' && event.button !== 0)) return;
+    if ((event.target as HTMLElement).closest('a, button')) return;
 
     dragState.current = {
       active: true,
+      dragging: false,
       startX: event.clientX,
       scrollLeft: track.scrollLeft,
     };
@@ -76,8 +79,11 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
     const track = trackRef.current;
     if (!track || !dragState.current.active) return;
 
-    event.preventDefault();
     const deltaX = event.clientX - dragState.current.startX;
+    if (!dragState.current.dragging && Math.abs(deltaX) < dragThreshold) return;
+
+    dragState.current.dragging = true;
+    event.preventDefault();
     track.scrollLeft = dragState.current.scrollLeft - deltaX;
   };
 
@@ -88,6 +94,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
     }
 
     dragState.current.active = false;
+    dragState.current.dragging = false;
   };
 
   return (

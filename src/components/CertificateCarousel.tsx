@@ -2,16 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { PointerEvent } from 'react';
-
-interface Certification {
-  id: string;
-  title: string;
-  institution: string;
-  date: string;
-  duration?: string;
-  icon: string;
-  certificateUrl?: string;
-}
+import type { Certification } from '@/types/portfolio';
 
 interface CertificateCarouselProps {
   certifications: Certification[];

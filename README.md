@@ -1,42 +1,37 @@
-# Portfolio Daniel Azevedo
+# Portfólio Daniel Azevedo
 
-Portfolio pessoal desenvolvido para apresentar minha trajetoria como **Desenvolvedor Full Stack** e **Tecnico em Desenvolvimento de Sistemas**. O projeto centraliza informacoes profissionais, habilidades tecnicas, projetos, formacao, certificacoes e canais de contato em uma interface moderna, responsiva e objetiva.
+[![Next.js](https://img.shields.io/badge/Next.js-16.1.0-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.1-61DAFB?style=for-the-badge&logo=react&logoColor=000000)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=ffffff)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=ffffff)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel)](https://vercel.com/)
 
-O foco deste portfolio e funcionar como uma vitrine profissional para recrutadores, oportunidades de estagio, projetos freelance e colaboracoes na area de tecnologia.
+Portfólio pessoal desenvolvido para apresentar minha trajetória como **Desenvolvedor Full Stack** e **Técnico em Desenvolvimento de Sistemas**. O projeto centraliza informações profissionais, habilidades técnicas, projetos, formação, certificações e canais de contato em uma interface moderna, responsiva e objetiva.
+
+O foco deste portfólio é funcionar como uma vitrine profissional para recrutadores, oportunidades de estágio, projetos freelance e colaborações na área de tecnologia.
 
 ---
 
 ## Preview
 
-Repositorio: [github.com/DanielAzeved0/portfolio-daniel-azevedo](https://github.com/DanielAzeved0/portfolio-daniel-azevedo)
+- Deploy: [portfolio-daniel-azevedo-q5qi.vercel.app](https://portfolio-daniel-azevedo-q5qi.vercel.app)
+- Repositório: [github.com/DanielAzeved0/portfolio-daniel-azevedo](https://github.com/DanielAzeved0/portfolio-daniel-azevedo)
 
-Deploy: [Link do Portfolio na Vercel](https://portfolio-daniel-azevedo-q5qi.vercel.app)
-
-Para visualizar localmente:
-
-```bash
-npm run dev
-```
-
-Acesse:
-
-```text
-http://localhost:3000
-```
+> Para adicionar um screenshot ao README, salve uma imagem em `public/portfolio-preview.png` e referencie-a nesta seção.
 
 ---
 
 ## Funcionalidades
 
-- Pagina unica com navegacao por secoes.
-- Menu fixo com versao responsiva para dispositivos moveis.
-- Secao de apresentacao com chamada para projetos e contato.
-- Area "Sobre Mim" com resumo profissional.
-- Listagem de habilidades tecnicas organizadas por categoria.
-- Cards de projetos com descricao, funcionalidades, tecnologias e link para o GitHub.
-- Secao de formacao academica.
-- Carrossel interativo de certificacoes.
-- Modal para visualizacao digital dos certificados.
+- Página única com navegação por seções.
+- Menu fixo com versão responsiva para dispositivos móveis.
+- Seção de apresentação com chamadas para projetos, contato e currículo.
+- Área "Sobre Mim" com resumo profissional.
+- Listagem de habilidades técnicas organizadas por categoria.
+- Cards de projetos com descrição, funcionalidades, tecnologias e links externos.
+- Seção de formação acadêmica.
+- Carrossel interativo de certificações.
+- Modal para visualização digital dos certificados.
 - Links diretos para email, GitHub e LinkedIn.
 - Layout responsivo para desktop, tablet e mobile.
 
@@ -44,14 +39,14 @@ http://localhost:3000
 
 ## Tecnologias Utilizadas
 
-| Tecnologia | Uso no projeto |
-| --- | --- |
-| Next.js 16.1.0 | Framework React com App Router |
-| React 19.2.1 | Construcao da interface |
-| TypeScript 5 | Tipagem estatica e maior seguranca no desenvolvimento |
-| Tailwind CSS 4 | Estilizacao responsiva e utilitaria |
-| Next Font | Otimizacao das fontes Geist e Geist Mono |
-| Vercel | Plataforma recomendada para deploy |
+| Tecnologia | Versão | Uso no projeto |
+| --- | --- | --- |
+| Next.js | 16.1.0 | Framework React com App Router |
+| React | 19.2.1 | Construção da interface |
+| TypeScript | 5 | Tipagem estática |
+| Tailwind CSS | 4 | Estilização responsiva |
+| Next Font | Integrado ao Next.js | Otimização das fontes Geist e Geist Mono |
+| Vercel | - | Deploy do portfólio |
 
 ---
 
@@ -66,13 +61,23 @@ portfolio-daniel-azevedo/
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── components/
+│   │   ├── sections/
+│   │   │   ├── AboutSection.tsx
+│   │   │   ├── ContactSection.tsx
+│   │   │   ├── EducationSection.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── ProjectsSection.tsx
+│   │   │   └── SkillsSection.tsx
 │   │   ├── CertificateCarousel.tsx
 │   │   ├── Navigation.tsx
 │   │   ├── ProjectCard.tsx
 │   │   └── SkillCard.tsx
-│   └── constants/
-│       ├── data.ts
-│       └── theme.ts
+│   ├── constants/
+│   │   ├── data.ts
+│   │   └── theme.ts
+│   └── types/
+│       └── portfolio.ts
 ├── next.config.ts
 ├── package.json
 ├── postcss.config.mjs
@@ -83,20 +88,21 @@ portfolio-daniel-azevedo/
 
 ## Objetivo
 
-O objetivo do projeto e reunir em um unico lugar as principais informacoes sobre minha formacao, habilidades, certificacoes e projetos desenvolvidos. A proposta e facilitar a avaliacao tecnica por recrutadores e demonstrar dominio de tecnologias modernas de frontend.
+Reunir em um único lugar as principais informações sobre minha formação, habilidades, certificações e projetos desenvolvidos. A proposta é facilitar a avaliação técnica por recrutadores e demonstrar domínio de tecnologias modernas de frontend.
 
 ---
 
-## Destaques Tecnicos
+## Destaques Técnicos
 
-- Uso de **componentes reutilizaveis** para cards, navegacao e carrossel.
-- Conteudo centralizado em `src/constants/data.ts`, facilitando manutencao e atualizacoes.
-- Estilos reutilizaveis centralizados em `src/constants/theme.ts`.
+- Componentização por seções para manter a página principal simples.
+- Dados centralizados em `src/constants/data.ts`.
+- Tipos compartilhados em `src/types/portfolio.ts`.
+- Estilos reutilizáveis centralizados em `src/constants/theme.ts`.
 - Projeto configurado com **TypeScript strict**.
-- Interface construida com foco em responsividade e leitura rapida.
-- Carrossel de certificados com suporte a navegacao por botoes, indicadores e arraste.
-- Modal acessivel para visualizacao de certificados digitais.
-- Estrutura simples, escalavel e facil de manter.
+- SEO configurado com metadata, Open Graph e Twitter Card.
+- Carrossel de certificados com navegação por botões, indicadores e arraste.
+- Modal acessível para visualização de certificados digitais.
+- Estrutura simples, escalável e fácil de manter.
 
 ---
 
@@ -109,37 +115,38 @@ Aplicativo mobile desenvolvido em React Native para auxiliar MEIs e pequenos emp
 Principais recursos:
 
 - Cadastro de ganhos e gastos.
-- Historico financeiro mensal.
-- Graficos comparativos.
-- Calculo simplificado do DAS.
+- Histórico financeiro mensal.
+- Gráficos comparativos.
+- Cálculo simplificado do DAS.
 
-Repositorio: [Simpliza-TCC](https://github.com/DanielAzeved0/Simpliza-TCC)
+Repositório: [Simpliza-TCC](https://github.com/DanielAzeved0/Simpliza-TCC)
 
 ### DeepArchive-Bridge
 
-Monorepo full stack para gerenciamento de vendas, com backend em .NET 8 e frontend em Next.js. O projeto trabalha com uma camada de arquivamento logico sobre SQLite e interface para gerenciamento de dados.
+Monorepo full stack para gerenciamento de vendas, com backend em ASP.NET Core 8 e frontend em Next.js. O projeto trabalha com autenticação JWT, SQLite e uma camada de arquivamento lógico.
 
 Principais recursos:
 
 - CRUD completo de vendas.
-- Arquivamento logico de registros antigos.
-- API RESTful.
-- Interface web para visualizacao e gerenciamento.
+- Busca por período, cliente, status e paginação.
+- Aprovação de vendas pendentes.
+- Arquivamento lógico de registros antigos.
+- Integração entre API e frontend via Axios.
 
-Repositorio: [DeepArchive-Bridge](https://github.com/DanielAzeved0/DeepArchive-Bridge)
+Repositório: [DeepArchive-Bridge](https://github.com/DanielAzeved0/DeepArchive-Bridge)
 
 ### Lista de Compras Mobile
 
-Aplicativo mobile academico para gerenciamento de listas de compras com autenticacao, sincronizacao e calculo automatico de valores.
+Aplicativo mobile acadêmico para gerenciamento de listas de compras com autenticação, sincronização e cálculo automático de valores.
 
 Principais recursos:
 
-- Perfil do usuario.
+- Perfil do usuário.
 - Tema claro e escuro.
-- Sincronizacao em tempo real.
-- Calculo automatico do valor total.
+- Sincronização em tempo real.
+- Cálculo automático do valor total.
 
-Repositorio: [trabalho-pamii](https://github.com/Eduardomarinho19/trabalho-pamii)
+Repositório: [trabalho-pamii](https://github.com/Eduardomarinho19/trabalho-pamii)
 
 ---
 
@@ -153,18 +160,18 @@ Repositorio: [trabalho-pamii](https://github.com/Eduardomarinho19/trabalho-pamii
 
 ## Como Executar
 
-### Pre-requisitos
+### Pré-requisitos
 
 - Node.js instalado.
 - npm instalado.
 
-### Instalacao
+### Instalação
 
 ```bash
 npm install
 ```
 
-### Execucao local
+### Execução local
 
 ```bash
 npm run dev
@@ -178,9 +185,9 @@ http://localhost:3000
 
 ---
 
-## Build de Producao
+## Build de Produção
 
-Para gerar a build de producao:
+Para gerar a build de produção:
 
 ```bash
 npm run build
@@ -194,6 +201,6 @@ npm run start
 
 ---
 
-## Licenca
+## Licença
 
-Este projeto foi desenvolvido para fins de portfolio pessoal. O codigo pode ser usado como referencia para estudos, mas a identidade visual, textos, dados pessoais e informacoes profissionais pertencem a Daniel Azevedo.
+Este projeto foi desenvolvido para fins de portfólio pessoal. O código pode ser usado como referência para estudos, mas a identidade visual, textos, dados pessoais e informações profissionais pertencem a Daniel Azevedo.

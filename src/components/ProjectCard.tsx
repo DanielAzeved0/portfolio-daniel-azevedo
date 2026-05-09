@@ -1,39 +1,43 @@
-interface ProjectCardProps {
-  title: string;
-  badge: string;
-  description: string;
-  features: string[];
-  technologies: string[];
-  githubUrl: string;
-}
+import type { Project } from '@/types/portfolio';
 
-export default function ProjectCard({ 
-  title, 
-  badge, 
-  description, 
-  features, 
-  technologies, 
-  githubUrl 
+type ProjectCardProps = Project;
+
+export default function ProjectCard({
+  title,
+  badge,
+  icon,
+  description,
+  features,
+  technologies,
+  githubUrl,
+  deployUrl,
+  featured,
 }: ProjectCardProps) {
   return (
-    <div className="bg-white p-8 rounded-2xl border-2 border-[#333333]/20 hover:border-[#00B0FF] transition-all hover:shadow-2xl hover:shadow-[#00B0FF]/20">
-      <div className="flex items-start justify-between mb-4">
+    <article className="bg-white p-8 rounded-2xl border-2 border-[#333333]/20 hover:border-[#00B0FF] transition-all hover:shadow-2xl hover:shadow-[#00B0FF]/20">
+      <div className="flex items-start justify-between gap-4 mb-4">
         <div>
           <span className="inline-block px-3 py-1 bg-[#00B0FF] text-white text-xs font-bold rounded-full mb-3">
             {badge}
           </span>
           <h3 className="text-3xl font-bold text-[#333333] mb-3">
-            📱 {title}
+            {icon} {title}
           </h3>
         </div>
+
+        {featured && (
+          <span className="hidden sm:inline-flex rounded-full border border-[#4A90E2]/30 px-3 py-1 text-xs font-bold text-[#4A90E2]">
+            Destaque
+          </span>
+        )}
       </div>
-      
+
       <p className="text-[#333333] text-lg mb-6 leading-relaxed">
         {description}
       </p>
 
       <div className="mb-6">
-        <h4 className="text-[#4A90E2] font-semibold mb-3 text-lg">✨ Funcionalidades:</h4>
+        <h4 className="text-[#4A90E2] font-semibold mb-3 text-lg">Funcionalidades:</h4>
         <ul className="grid md:grid-cols-2 gap-3">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2 text-[#333333]">
@@ -47,10 +51,10 @@ export default function ProjectCard({
       </div>
 
       <div className="mb-6">
-        <h4 className="text-[#4A90E2] font-semibold mb-3">🛠️ Tecnologias:</h4>
+        <h4 className="text-[#4A90E2] font-semibold mb-3">Tecnologias:</h4>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
-            <span 
+            <span
               key={tech}
               className="px-4 py-2 bg-[#E0E0E0] text-[#333333] rounded-full text-sm font-medium border border-[#4A90E2]/30"
             >
@@ -61,7 +65,18 @@ export default function ProjectCard({
       </div>
 
       <div className="flex gap-4 flex-wrap">
-        <a 
+        {deployUrl && (
+          <a
+            href={deployUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 bg-[#333333] text-white rounded-full font-semibold hover:bg-[#4A90E2] transition-all"
+          >
+            Ver Projeto
+          </a>
+        )}
+
+        <a
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -73,6 +88,6 @@ export default function ProjectCard({
           Ver no GitHub
         </a>
       </div>
-    </div>
+    </article>
   );
 }

@@ -1,6 +1,14 @@
-// Dados do portfólio centralizados para facilitar manutenção
+import type {
+  AboutText,
+  Certification,
+  Education,
+  NavigationItem,
+  PersonalInfo,
+  Project,
+  SkillCategory,
+} from '@/types/portfolio';
 
-export const PERSONAL_INFO = {
+export const PERSONAL_INFO: PersonalInfo = {
   name: 'Daniel Azevedo',
   fullName: 'Daniel da Silva Azevedo',
   title: 'Desenvolvedor Full Stack',
@@ -8,33 +16,36 @@ export const PERSONAL_INFO = {
   email: 'daniel.azevedo081205@gmail.com',
   github: 'https://github.com/DanielAzeved0',
   linkedin: 'https://www.linkedin.com/in/daniel-azevedo-403444321/',
+  portfolioUrl: 'https://portfolio-daniel-azevedo-q5qi.vercel.app',
 };
 
-export const ABOUT_TEXT = {
-  paragraph1: 'Sou estudante de Desenvolvimento de Sistemas com paixão por criar soluções tecnológicas inovadoras. Durante meu curso técnico, desenvolvi habilidades sólidas em programação, banco de dados e desenvolvimento web.',
-  paragraph2: 'Busco constantemente aprender novas tecnologias e aplicar meus conhecimentos em projetos práticos. Tenho facilidade para trabalhar em equipe e adoro enfrentar desafios que me permitam crescer profissionalmente.',
+export const ABOUT_TEXT: AboutText = {
+  paragraph1:
+    'Sou estudante de Desenvolvimento de Sistemas com paixão por criar soluções tecnológicas inovadoras. Durante meu curso técnico, desenvolvi habilidades sólidas em programação, banco de dados e desenvolvimento web.',
+  paragraph2:
+    'Busco constantemente aprender novas tecnologias e aplicar meus conhecimentos em projetos práticos. Tenho facilidade para trabalhar em equipe e gosto de enfrentar desafios que me permitam crescer profissionalmente.',
 };
 
-export const SKILLS = [
+export const SKILLS: SkillCategory[] = [
   {
     category: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'React Native',  'Bootstrap'],
+    skills: ['React', 'Next.js', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'React Native', 'Bootstrap'],
   },
   {
     category: 'Backend',
     skills: ['JavaScript', 'Node.js', 'Express.js', 'Expo', '.NET 8', 'C#'],
   },
   {
-    category: 'Database',
-    skills: ['MySQL', 'MongoDB', 'FireBase', 'PostgreSQL', 'SQLite'],
+    category: 'Banco de Dados',
+    skills: ['MySQL', 'MongoDB', 'Firebase', 'PostgreSQL', 'SQLite'],
   },
   {
-    category: 'Tools',
+    category: 'Ferramentas',
     skills: ['Git', 'GitHub', 'VS Code', 'Cypress', 'Postman', 'Docker', 'Swagger', 'EAS Build'],
   },
   {
     category: 'Conceitos',
-    skills: ['CRUD', 'Scrum'],
+    skills: ['CRUD', 'Scrum', 'API REST', 'Responsividade'],
   },
   {
     category: 'Soft Skills',
@@ -42,12 +53,14 @@ export const SKILLS = [
   },
 ];
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     id: 'simpliza',
     title: 'Simpliza',
-    badge: '🎓 TCC - Projeto de Conclusão',
-    description: 'Aplicativo mobile desenvolvido em React Native para auxiliar MEIs e pequenos empreendedores no controle financeiro mensal. Permite registrar ganhos e gastos, visualizar gráficos comparativos e calcular o DAS de forma simplificada.',
+    badge: 'TCC - Projeto de Conclusão',
+    icon: '🎓',
+    description:
+      'Aplicativo mobile desenvolvido para auxiliar MEIs e pequenos empreendedores no controle financeiro mensal, reunindo ganhos, gastos, histórico e cálculo simplificado do DAS em uma experiência objetiva.',
     features: [
       'Cadastro de ganhos e gastos',
       'Histórico financeiro mensal',
@@ -56,48 +69,66 @@ export const PROJECTS = [
     ],
     technologies: ['React Native', 'Expo', 'JavaScript', 'Android', 'EAS Build'],
     githubUrl: 'https://github.com/DanielAzeved0/Simpliza-TCC',
+    featured: true,
   },
   {
     id: 'deeparchive-bridge',
     title: 'DeepArchive-Bridge',
-    badge: '🗄️ Projeto Pessoal',
-    description: 'Monorepo com backend em .NET 8 e frontend em Next.js 16 para gerenciamento de vendas com uma camada de arquivamento lógico sobre SQLite. O sistema oferece uma API RESTful para operações CRUD, armazenamento inteligente de dados e uma interface moderna para visualização e gerenciamento de vendas.',
+    badge: 'Projeto Full Stack',
+    icon: '🗄️',
+    description:
+      'Monorepo full stack para gerenciamento de vendas, com backend em ASP.NET Core 8 e frontend em Next.js. O sistema centraliza operações de venda, autenticação e uma camada de arquivamento lógico sobre SQLite.',
     features: [
-      'Gerenciamento automático de vendas - CRUD completo',
-      'Arquivamento inteligente com dados de mais de 90 dias',
-      'Hot Storage: SQlite com acesso rápido para dados recentes',
-      'Cold Storage: Armazenamento de arquivo para dados históricos',
-      'API RESTful com Swagger UI',
-      'Injeção de Dependências com arquitetura desacoplada',
-      'Docker Compose para ambiente de desenvolvimento',
+      'CRUD completo de vendas',
+      'Busca por período, cliente, status e paginação',
+      'Aprovação de vendas pendentes',
+      'Autenticação JWT integrada ao frontend',
+      'Dashboard e telas de listagem, criação, edição e detalhes',
+      'Arquivamento lógico para vendas com mais de 90 dias',
+      'Health check da API e integração via Axios',
     ],
-    technologies: ['.NET 8.0', 'C#', 'PostgreSQL', 'Entity Framework Core', 'Docker', 'Swagger'],
+    technologies: [
+      'ASP.NET Core 8',
+      'C# 12',
+      'Entity Framework Core 8',
+      'SQLite',
+      'JWT Bearer',
+      'Next.js 16',
+      'React 18',
+      'TypeScript',
+      'Tailwind CSS',
+      'Axios',
+    ],
     githubUrl: 'https://github.com/DanielAzeved0/DeepArchive-Bridge',
+    featured: true,
   },
   {
     id: 'trabalho-pamii',
     title: 'Lista de Compras Mobile',
-    badge: '📱 Projeto Acadêmico',
-    description: 'Aplicativo mobile completo de lista de compras desenvolvido durante a disciplina de Programação de Aplicações Móveis II. Sistema robusto com autenticação Firebase, sincronização em tempo real e interface moderna para gerenciar listas de compras de forma eficiente.',
+    badge: 'Projeto Acadêmico',
+    icon: '📱',
+    description:
+      'Aplicativo mobile de lista de compras criado na disciplina de Programação de Aplicações Móveis II, com autenticação, sincronização em tempo real e interface moderna para organizar compras.',
     features: [
-      ' Perfil do usuário com edição de dados',
-      ' Tema claro e escuro (toggle)',
-      ' Design responsivo e interface moderna',
-      ' Sincronização em tempo real (Firebase Database)',
-      ' Cálculo automático do valor total da lista',
+      'Perfil do usuário com edição de dados',
+      'Tema claro e escuro',
+      'Design responsivo e interface moderna',
+      'Sincronização em tempo real com Firebase',
+      'Cálculo automático do valor total da lista',
     ],
-    technologies: ['React Native', 'Expo', 'Firebase Auth', 'Firebase Database', 'JavaScript', ],
+    technologies: ['React Native', 'Expo', 'Firebase Auth', 'Firebase Database', 'JavaScript'],
     githubUrl: 'https://github.com/Eduardomarinho19/trabalho-pamii',
   },
 ];
 
-export const EDUCATION = {
+export const EDUCATION: Education = {
   degree: 'Técnico em Desenvolvimento de Sistemas',
   period: '2023 - 2025',
-  description: 'Formação técnica com foco em desenvolvimento de software, banco de dados, programação orientada a objetos, desenvolvimento web e mobile.',
+  description:
+    'Formação técnica com foco em desenvolvimento de software, banco de dados, programação orientada a objetos, desenvolvimento web e mobile.',
 };
 
-export const CERTIFICATIONS = [
+export const CERTIFICATIONS: Certification[] = [
   {
     id: 'logica-programacao-javascript',
     title: 'Lógica de Programação: Mergulhe em Programação com JavaScript',
@@ -105,7 +136,8 @@ export const CERTIFICATIONS = [
     date: '04 de fevereiro de 2026',
     duration: '6 horas',
     icon: '💻',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/logica-programacao-mergulhe-programacao-javascript/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/logica-programacao-mergulhe-programacao-javascript/certificate',
   },
   {
     id: 'logica-programacao-funcoes-listas',
@@ -114,7 +146,8 @@ export const CERTIFICATIONS = [
     date: '13 de fevereiro de 2026',
     duration: '6 horas',
     icon: '🧠',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/logica-programacao-praticando-desafios/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/logica-programacao-praticando-desafios/certificate',
   },
   {
     id: 'git-github-colaborando-projetos',
@@ -123,7 +156,8 @@ export const CERTIFICATIONS = [
     date: '14 de fevereiro de 2026',
     duration: '8 horas',
     icon: '🔀',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/git-github-compartilhando-colaborando-projetos/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/git-github-compartilhando-colaborando-projetos/certificate',
   },
   {
     id: 'csharp-primeira-aplicacao',
@@ -132,7 +166,8 @@ export const CERTIFICATIONS = [
     date: '12 de março de 2026',
     duration: '8 horas',
     icon: '💻',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-criando-primeira-aplicacao/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-criando-primeira-aplicacao/certificate',
   },
   {
     id: 'csharp-orientacao-objetos',
@@ -141,7 +176,8 @@ export const CERTIFICATIONS = [
     date: '15 de março de 2026',
     duration: '8 horas',
     icon: '🔧',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-aplicando-orientacao-objetos/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-aplicando-orientacao-objetos/certificate',
   },
   {
     id: 'csharp-dominando-orientacao-objetos',
@@ -150,7 +186,8 @@ export const CERTIFICATIONS = [
     date: '2026',
     duration: '8 horas',
     icon: '🧩',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-dominando-orientacao-objetos/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-dominando-orientacao-objetos/certificate',
   },
   {
     id: 'csharp-api-arquivos-linq',
@@ -159,7 +196,8 @@ export const CERTIFICATIONS = [
     date: '2026',
     duration: '8 horas',
     icon: '🔗',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/c-sharp-consumindo-api-gravando-arquivos-linq/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/c-sharp-consumindo-api-gravando-arquivos-linq/certificate',
   },
   {
     id: 'csharp-excecoes-aplicacoes-resilientes',
@@ -168,7 +206,8 @@ export const CERTIFICATIONS = [
     date: '24 de março de 2026',
     duration: '8 horas',
     icon: '🛡️',
-    certificateUrl: 'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-excecoes-construa-aplicacoes-resilientes/certificate',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-excecoes-construa-aplicacoes-resilientes/certificate',
   },
   {
     id: 'cisco-networking',
@@ -186,7 +225,7 @@ export const CERTIFICATIONS = [
   },
 ];
 
-export const NAVIGATION_ITEMS = [
+export const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: '#home', label: 'Início' },
   { href: '#about', label: 'Sobre' },
   { href: '#skills', label: 'Habilidades' },

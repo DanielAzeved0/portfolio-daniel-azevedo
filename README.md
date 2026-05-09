@@ -16,7 +16,7 @@ O foco deste portfólio é funcionar como uma vitrine profissional para recrutad
 
 - Deploy: [portfolio-daniel-azevedo-q5qi.vercel.app](https://portfolio-daniel-azevedo-q5qi.vercel.app)
 - Repositório: [github.com/DanielAzeved0/portfolio-daniel-azevedo](https://github.com/DanielAzeved0/portfolio-daniel-azevedo)
-- 
+
 ---
 
 ## Funcionalidades

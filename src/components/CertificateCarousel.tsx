@@ -21,7 +21,6 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   const trackRef = useRef<HTMLDivElement>(null);
   const dragState = useRef({ active: false, startX: 0, scrollLeft: 0 });
   const [activeIndex, setActiveIndex] = useState(0);
-  const [cursor, setCursor] = useState({ visible: false, x: 0, y: 0, dragging: false });
   const [selectedCertificate, setSelectedCertificate] = useState<Certification | null>(null);
 
   const maxIndex = Math.max(certifications.length - 1, 0);
@@ -98,18 +97,9 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
       scrollLeft: track.scrollLeft,
     };
     track.setPointerCapture(event.pointerId);
-    setCursor((current) => ({ ...current, dragging: true }));
   };
 
   const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    setCursor({
-      visible: event.pointerType === 'mouse',
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-      dragging: dragState.current.active,
-    });
-
     const track = trackRef.current;
     if (!track || !dragState.current.active) return;
 
@@ -125,27 +115,10 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
     }
 
     dragState.current.active = false;
-    setCursor((current) => ({ ...current, dragging: false }));
   };
 
   return (
-    <div
-      className="relative overflow-hidden"
-      onPointerMove={handlePointerMove}
-      onPointerLeave={() => setCursor((current) => ({ ...current, visible: false, dragging: false }))}
-    >
-      <div
-        className="pointer-events-none absolute z-20 hidden h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-[#00B0FF]/60 bg-[#333333]/90 text-xs font-bold uppercase tracking-wide text-white shadow-xl shadow-[#00B0FF]/20 backdrop-blur md:grid"
-        style={{
-          left: cursor.x,
-          top: cursor.y,
-          opacity: cursor.visible ? 1 : 0,
-          transform: `translate(-50%, -50%) scale(${cursor.dragging ? 0.88 : 1})`,
-        }}
-      >
-        {cursor.dragging ? 'Solte' : 'Arraste'}
-      </div>
-
+    <div className="relative overflow-hidden">
       <div className="mb-6 flex items-center justify-between gap-4">
         <p className="text-sm font-semibold text-[#333333]/70">
           {activeIndex + 1} de {certifications.length}
@@ -180,6 +153,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
         ref={trackRef}
         className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
         onPointerUp={stopDragging}
         onPointerCancel={stopDragging}
       >

@@ -103,21 +103,21 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    id: 'trabalho-pamii',
-    title: 'Lista de Compras Mobile',
-    badge: 'Projeto Acadêmico',
-    icon: '📱',
+    id: 'mcp-task-manager',
+    title: 'MCP Prompt Generator',
+    badge: 'Projeto Full Stack com IA',
+    icon: '🧠',
     description:
-      'Aplicativo mobile de lista de compras criado na disciplina de Programação de Aplicações Móveis II, com autenticação, sincronização em tempo real e interface moderna para organizar compras.',
+      'Aplicação full stack local que transforma prompts, código, JSON e contexto em SPECs estruturadas com classificação semântica, validação rígida de schema e fallback determinístico.',
     features: [
-      'Perfil do usuário com edição de dados',
-      'Tema claro e escuro',
-      'Design responsivo e interface moderna',
-      'Sincronização em tempo real com Firebase',
-      'Cálculo automático do valor total da lista',
+      'Classificação semântica de intents e seleção de templates',
+      'Injeção de contexto de código com análise AST-aware',
+      'Governança de providers com Gemini, Ollama e fallback seguro',
+      'Interface web para gerar e revisar SPECs em JSON',
+      'Suite golden para validar contratos e regressões do runtime',
     ],
-    technologies: ['React Native', 'Expo', 'Firebase Auth', 'Firebase Database', 'JavaScript'],
-    githubUrl: 'https://github.com/Eduardomarinho19/trabalho-pamii',
+    technologies: ['TypeScript', 'Node.js', 'Express', 'React', 'Zod', 'Gemini', 'Ollama'],
+    githubUrl: 'https://github.com/DanielAzeved0/mcp-task-manager',
   },
 ];
 

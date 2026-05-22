@@ -121,12 +121,21 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const EDUCATION: Education = {
-  degree: 'Técnico em Desenvolvimento de Sistemas',
-  period: '2023 - 2025',
-  description:
-    'Formação técnica com foco em desenvolvimento de software, banco de dados, programação orientada a objetos, desenvolvimento web e mobile.',
-};
+export const EDUCATION: Education[] = [
+  {
+    degree: 'Bacharelado em Ciência da Computação',
+    institution: 'Universidade Impacta',
+    period: 'Início previsto: agosto de 2026',
+    description:
+      'Graduação com foco na ampliação da base em computação, engenharia de software e desenvolvimento de soluções tecnológicas.',
+  },
+  {
+    degree: 'Técnico em Desenvolvimento de Sistemas',
+    period: '2023 - 2025',
+    description:
+      'Formação técnica com foco em desenvolvimento de software, banco de dados, programação orientada a objetos, desenvolvimento web e mobile.',
+  },
+];
 
 export const CERTIFICATIONS: Certification[] = [
   {
@@ -210,18 +219,30 @@ export const CERTIFICATIONS: Certification[] = [
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-excecoes-construa-aplicacoes-resilientes/certificate',
   },
   {
-    id: 'cisco-networking',
-    title: 'Conceitos Básicos de Redes',
-    institution: 'Cisco Networking Academy',
+    id: 'cisco-networking-basics',
+    title: 'Networking Basics',
+    institution: 'Cisco',
     date: '2025',
     icon: '🌐',
+    certificateUrl:
+      'https://www.credly.com/badges/5a848384-84de-4f93-986c-44a066f48c55',
   },
   {
-    id: 'cisco-cybersecurity',
-    title: 'Introdução à Cibersegurança',
-    institution: 'Cisco Networking Academy',
+    id: 'cisco-networking-devices-initial-configuration',
+    title: 'Networking Devices and Initial Configuration',
+    institution: 'Cisco',
+    icon: '🖧',
+    certificateUrl:
+      'https://www.credly.com/badges/849541e1-168e-45db-bde0-3097600a61ad',
+  },
+  {
+    id: 'cisco-introduction-cybersecurity',
+    title: 'Introduction to Cybersecurity',
+    institution: 'Cisco',
     date: '2025',
     icon: '🔒',
+    certificateUrl:
+      'https://www.credly.com/badges/fbc4bcca-4110-4aec-a68d-1d47fc305dd6',
   },
 ];
 

@@ -35,6 +35,7 @@ export interface Project {
 
 export interface Education {
   degree: string;
+  institution?: string;
   period: string;
   description: string;
 }
@@ -43,7 +44,7 @@ export interface Certification {
   id: string;
   title: string;
   institution: string;
-  date: string;
+  date?: string;
   duration?: string;
   icon: string;
   certificateUrl?: string;

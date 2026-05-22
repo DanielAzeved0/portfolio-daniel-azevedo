@@ -161,7 +161,9 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
 
               <div>
                 <p className="mb-1 font-semibold text-[#4A90E2]">{cert.institution}</p>
-                <p className="text-sm text-[#333333]/75">Finalizado em {cert.date}</p>
+                {cert.date && (
+                  <p className="text-sm text-[#333333]/75">Finalizado em {cert.date}</p>
+                )}
                 {cert.certificateUrl && (
                   <a
                     href={cert.certificateUrl}

@@ -27,14 +27,6 @@ export default function HeroSection() {
                 Baixar Currículo
               </a>
             )}
-            {!PERSONAL_INFO.resumeUrl && (
-              <a
-                href={`mailto:${PERSONAL_INFO.email}?subject=Solicitação de currículo&body=Olá Daniel,%0D%0A%0D%0APoderia me enviar seu currículo?`}
-                className={BUTTON_STYLES.outline}
-              >
-                Solicitar Currículo
-              </a>
-            )}
           </div>
         </div>
       </div>

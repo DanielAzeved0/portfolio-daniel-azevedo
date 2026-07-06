@@ -189,7 +189,7 @@ export const EDUCATION: Education[] = [
   {
     degree: 'Bacharelado em Ciência da Computação',
     institution: 'Universidade Impacta',
-    period: 'Início previsto: agosto de 2026',
+    period: '2026 - 2030',
     description:
       'Graduação com foco na ampliação da base em computação, engenharia de software e desenvolvimento de soluções tecnológicas.',
   },

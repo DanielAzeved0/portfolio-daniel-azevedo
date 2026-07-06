@@ -219,6 +219,94 @@ export const CERTIFICATIONS: Certification[] = [
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/csharp-excecoes-construa-aplicacoes-resilientes/certificate',
   },
   {
+    id: 'linux-script-processamento-arquivos-logs',
+    title: 'Linux: Criando um Script para Processamento de Arquivos de Logs',
+    institution: 'Alura',
+    icon: '🐧',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/linux-criando-script-processamento-arquivos-logs/certificate',
+  },
+  {
+    id: 'python-primeira-aplicacao',
+    title: 'Python: Crie a Sua Primeira Aplicação',
+    institution: 'Alura',
+    icon: '🐍',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/python-crie-sua-primeira-aplicacao/certificate',
+  },
+  {
+    id: 'pentest-vulnerabilidades-aplicacoes-web',
+    title: 'Pentest: Explorando Vulnerabilidades em Aplicações Web',
+    institution: 'Alura',
+    icon: '🛡️',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/pentest-explorando-vulnerabilidades-aplicacoes-web/certificate',
+  },
+  {
+    id: 'linux-script-monitoramento-sistema',
+    title: 'Linux: Criando um Script de Monitoramento do Sistema',
+    institution: 'Alura',
+    icon: '📊',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/linux-criando-script-monitoramento-sistema/certificate',
+  },
+  {
+    id: 'linux-diretorios-arquivos-permissoes-processos',
+    title: 'Linux: Gerenciando Diretórios, Arquivos, Permissões e Processos',
+    institution: 'Alura',
+    icon: '🗂️',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/linux-gerenciando-diretorios-arquivos-permissoes-processos/certificate',
+  },
+  {
+    id: 'redes-conceitos-iniciais-intranet',
+    title: 'Redes: Conceitos Iniciais e Criação de uma Intranet',
+    institution: 'Alura',
+    icon: '🌐',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-conceitos-iniciais-criacao-intranet/certificate',
+  },
+  {
+    id: 'redes-roteamento-dns-ipv6',
+    title: 'Redes: Implementando Roteamento, DNS e IPv6',
+    institution: 'Alura',
+    icon: '🖧',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-implementando-roteamento-dns-ipv6/certificate',
+  },
+  {
+    id: 'redes-vlans-politicas-acesso-internet',
+    title: 'Redes: Projeto de VLANs, Políticas de Acesso e Conexão com a Internet',
+    institution: 'Alura',
+    icon: '🔀',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-projeto-vlans-politicas-acesso-conexao-internet/certificate',
+  },
+  {
+    id: 'http-web-por-baixo-dos-panos',
+    title: 'HTTP: Entendendo a Web por Baixo dos Panos',
+    institution: 'Alura',
+    icon: '🔗',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/http-entendendo-web-por-baixo-dos-panos/certificate',
+  },
+  {
+    id: 'redes-wifi-rede-sem-fio-segura',
+    title: 'Redes Wi-Fi: Criando uma Rede Sem Fio de Modo Seguro',
+    institution: 'Alura',
+    icon: '📡',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-wi-fi-rede-sem-fio-modo-seguro/certificate',
+  },
+  {
+    id: 'computacao-fundamentos-pensamento-computacional',
+    title: 'Computação: Fundamentos da Computação e Pensamento Computacional',
+    institution: 'Alura',
+    icon: '🧠',
+    certificateUrl:
+      'https://cursos.alura.com.br/user/daniel-azevedo081205/course/computacao-fundamentos-computacao-pensamento-computacional/certificate',
+  },
+  {
     id: 'cisco-networking-basics',
     title: 'Networking Basics',
     institution: 'Cisco',

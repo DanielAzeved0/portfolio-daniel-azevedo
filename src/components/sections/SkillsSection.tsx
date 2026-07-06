@@ -6,7 +6,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className={`${SECTION_STYLES.container} bg-white`}>
       <div className="max-w-6xl mx-auto">
-        <h2 className={SECTION_STYLES.title}>Habilidades Técnicas</h2>
+        <h2 className={SECTION_STYLES.title}>Habilidades</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SKILLS.map((item) => (
             <SkillCard

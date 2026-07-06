@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  'Portfólio de Daniel da Silva Azevedo, Desenvolvedor Full Stack e Técnico em Desenvolvimento de Sistemas, com projetos em React, Next.js, React Native, .NET, C# e bancos de dados.';
+  'Portfólio de Daniel da Silva Azevedo, Desenvolvedor Full Stack com experiência em suporte, infraestrutura de TI, redes, automação e projetos com React, Next.js, React Native, .NET, C# e Python.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(PERSONAL_INFO.portfolioUrl),
@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     'React Native',
     '.NET',
     'C#',
+    'Python',
+    'Infraestrutura de TI',
+    'Suporte Técnico',
+    'Active Directory',
+    'Zabbix',
   ],
   authors: [{ name: PERSONAL_INFO.fullName, url: PERSONAL_INFO.linkedin }],
   creator: PERSONAL_INFO.fullName,

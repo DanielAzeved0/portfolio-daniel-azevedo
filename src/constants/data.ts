@@ -2,6 +2,7 @@ import type {
   AboutText,
   Certification,
   Education,
+  Experience,
   NavigationItem,
   PersonalInfo,
   Project,
@@ -12,7 +13,7 @@ export const PERSONAL_INFO: PersonalInfo = {
   name: 'Daniel Azevedo',
   fullName: 'Daniel da Silva Azevedo',
   title: 'Desenvolvedor Full Stack',
-  subtitle: 'Técnico em Desenvolvimento de Sistemas',
+  subtitle: 'Suporte e Infraestrutura de TI',
   email: 'daniel.azevedo081205@gmail.com',
   github: 'https://github.com/DanielAzeved0',
   linkedin: 'https://www.linkedin.com/in/daniel-azevedo-403444321/',
@@ -21,9 +22,9 @@ export const PERSONAL_INFO: PersonalInfo = {
 
 export const ABOUT_TEXT: AboutText = {
   paragraph1:
-    'Sou estudante de Desenvolvimento de Sistemas com paixão por criar soluções tecnológicas inovadoras. Durante meu curso técnico, desenvolvi habilidades sólidas em programação, banco de dados e desenvolvimento web.',
+    'Sou profissional de TI com experiência em suporte técnico N1/N2 e infraestrutura, atuando em ambientes corporativos com foco em resolução de incidentes, redes, backup em nuvem e suporte a usuários.',
   paragraph2:
-    'Busco constantemente aprender novas tecnologias e aplicar meus conhecimentos em projetos práticos. Tenho facilidade para trabalhar em equipe e gosto de enfrentar desafios que me permitam crescer profissionalmente.',
+    'Também desenvolvo soluções full stack com Node.js, React Native, C#, .NET, Python e Next.js, conectando visão de infraestrutura, automação e desenvolvimento para criar aplicações úteis e fáceis de manter.',
 };
 
 export const SKILLS: SkillCategory[] = [
@@ -33,7 +34,7 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     category: 'Backend',
-    skills: ['JavaScript', 'Node.js', 'Express.js', 'Expo', '.NET 8', 'C#'],
+    skills: ['JavaScript', 'Node.js', 'Express.js', 'FastAPI', 'Python', '.NET 8', 'C#'],
   },
   {
     category: 'Banco de Dados',
@@ -41,15 +42,27 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     category: 'Ferramentas',
-    skills: ['Git', 'GitHub', 'VS Code', 'Cypress', 'Postman', 'Docker', 'Swagger', 'EAS Build'],
+    skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Docker', 'Swagger', 'PowerShell', 'Shell Script'],
+  },
+  {
+    category: 'Infraestrutura',
+    skills: ['Windows 10/11', 'Windows Server', 'Linux', 'Active Directory', 'Microsoft 365', 'Veeam Backup'],
+  },
+  {
+    category: 'Redes e Observabilidade',
+    skills: ['TCP/IP', 'DNS', 'DHCP', 'VLAN', 'IPv4/IPv6', 'VPN', 'Zabbix', 'Grafana', 'Prometheus'],
   },
   {
     category: 'Conceitos',
-    skills: ['CRUD', 'Scrum', 'API REST', 'Responsividade'],
+    skills: ['CRUD', 'Scrum', 'API REST', 'Responsividade', 'Service Desk', 'Inventário de ativos'],
   },
   {
     category: 'Soft Skills',
     skills: ['Trabalho em equipe', 'Comunicação', 'Resolução de problemas', 'Criatividade', 'Adaptabilidade'],
+  },
+  {
+    category: 'Idiomas',
+    skills: ['Inglês intermediário', 'Espanhol básico'],
   },
 ];
 
@@ -60,15 +73,34 @@ export const PROJECTS: Project[] = [
     badge: 'TCC - Projeto de Conclusão',
     icon: '🎓',
     description:
-      'Aplicativo mobile desenvolvido para auxiliar MEIs e pequenos empreendedores no controle financeiro mensal, reunindo ganhos, gastos, histórico e cálculo simplificado do DAS em uma experiência objetiva.',
+      'Aplicativo mobile full stack desenvolvido para auxiliar MEIs e pequenos empreendedores no controle financeiro mensal, reunindo autenticação, histórico, gráficos e gerenciamento de receitas/despesas em uma experiência objetiva.',
     features: [
+      'Autenticação com Firebase',
       'Cadastro de ganhos e gastos',
       'Histórico financeiro mensal',
       'Gráficos comparativos',
       'Cálculo simplificado do DAS',
     ],
-    technologies: ['React Native', 'Expo', 'JavaScript', 'Android', 'EAS Build'],
+    technologies: ['React Native', 'Expo', 'JavaScript', 'Firebase', 'Android', 'EAS Build'],
     githubUrl: 'https://github.com/DanielAzeved0/Simpliza-TCC',
+    featured: true,
+  },
+  {
+    id: 'it-center-security-cloud',
+    title: 'IT Center Security Cloud',
+    badge: 'Infraestrutura e Segurança',
+    icon: '☁️',
+    description:
+      'Plataforma full stack para monitoramento, inventário, observabilidade e segurança de ambientes Windows em nuvem, integrando backend, frontend, banco de dados e automações em PowerShell.',
+    features: [
+      'Monitoramento de ambientes Windows',
+      'Inventário de ativos de TI',
+      'Observabilidade de serviços e infraestrutura',
+      'Automações operacionais com PowerShell',
+      'Base estruturada para rotinas de segurança',
+    ],
+    technologies: ['FastAPI', 'Next.js', 'PostgreSQL', 'PowerShell', 'Windows Server'],
+    githubUrl: 'https://github.com/DanielAzeved0/it-center-security-cloud',
     featured: true,
   },
   {
@@ -118,6 +150,38 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['TypeScript', 'Node.js', 'Express', 'React', 'Zod', 'Gemini', 'Ollama'],
     githubUrl: 'https://github.com/DanielAzeved0/mcp-task-manager',
+  },
+];
+
+export const EXPERIENCES: Experience[] = [
+  {
+    role: 'Técnico de Suporte N1 - Deployment',
+    company: 'Penso Tecnologia',
+    period: 'Jul/2026 - Atual',
+    highlights: [
+      'Atendimento de suporte técnico N1 a usuários corporativos, presencial e remoto, utilizando plataforma de Service Desk.',
+      'Instalação, configuração e manutenção de computadores, notebooks, periféricos, sistemas Windows e Microsoft 365.',
+      'Administração de usuários, grupos e permissões no Active Directory, além de suporte a máquinas virtuais.',
+      'Monitoramento de infraestrutura com Zabbix, análise de incidentes e acompanhamento da disponibilidade dos serviços.',
+      'Operação e conferência de backups corporativos com Veeam, incluindo análise de logs e apoio em restaurações.',
+      'Auditoria e inventário de ativos de TI, documentação técnica e escalonamento de incidentes para equipes N2/N3.',
+    ],
+    technologies: ['Service Desk', 'Windows', 'Microsoft 365', 'Active Directory', 'Zabbix', 'Veeam Backup'],
+  },
+  {
+    role: 'Analista de Infraestrutura de TI',
+    company: 'Inovah Plast',
+    period: 'Nov/2025 - Atual',
+    type: 'PJ',
+    highlights: [
+      'Suporte técnico N1/N2 remoto e presencial.',
+      'Implantação e monitoramento de rotinas de backup corporativo utilizando OneDrive Empresarial.',
+      'Criação de scripts de automação para backup e geração de logs.',
+      'Implementação de monitoramento de infraestrutura utilizando Grafana e Prometheus.',
+      'Análise de métricas e acompanhamento da saúde dos serviços corporativos.',
+      'Administração de compartilhamentos de rede e resolução de incidentes relacionados a acesso a servidores.',
+    ],
+    technologies: ['OneDrive Empresarial', 'Shell Script', 'Grafana', 'Prometheus', 'Redes', 'Backup'],
   },
 ];
 
@@ -338,6 +402,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: '#home', label: 'Início' },
   { href: '#about', label: 'Sobre' },
   { href: '#skills', label: 'Habilidades' },
+  { href: '#experience', label: 'Experiência' },
   { href: '#projects', label: 'Projetos' },
   { href: '#contact', label: 'Contato' },
 ];

@@ -40,6 +40,15 @@ export interface Education {
   description: string;
 }
 
+export interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  type?: string;
+  highlights: string[];
+  technologies: string[];
+}
+
 export interface Certification {
   id: string;
   title: string;

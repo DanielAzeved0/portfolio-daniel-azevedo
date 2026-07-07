@@ -6,9 +6,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=ffffff)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel)](https://vercel.com/)
 
-Portfólio pessoal desenvolvido para apresentar minha trajetória como **Desenvolvedor Full Stack** e **Técnico em Desenvolvimento de Sistemas**. O projeto centraliza informações profissionais, habilidades técnicas, projetos, formação, certificações e canais de contato em uma interface moderna, responsiva e objetiva.
+Portfólio pessoal de **Daniel da Silva Azevedo**, desenvolvido para apresentar atuação como **Desenvolvedor Full Stack** com experiência em **suporte técnico, infraestrutura de TI, redes, automação e observabilidade**.
 
-O foco deste portfólio é funcionar como uma vitrine profissional para recrutadores, oportunidades de estágio, projetos freelance e colaborações na área de tecnologia.
+O projeto centraliza resumo profissional, habilidades, experiências, projetos, formação, certificações e canais de contato em uma página única responsiva.
 
 ---
 
@@ -17,22 +17,38 @@ O foco deste portfólio é funcionar como uma vitrine profissional para recrutad
 - Deploy: [portfolio-daniel-azevedo-q5qi.vercel.app](https://portfolio-daniel-azevedo-q5qi.vercel.app)
 - Repositório: [github.com/DanielAzeved0/portfolio-daniel-azevedo](https://github.com/DanielAzeved0/portfolio-daniel-azevedo)
 
+> Observação: algumas alterações recentes podem existir apenas localmente até o próximo deploy na Vercel.
+
+---
+
+## Situação Atual
+
+O portfólio atualmente destaca:
+
+- Desenvolvimento full stack com React, Next.js, React Native, Node.js, C#, .NET, Python e FastAPI.
+- Experiência profissional em suporte técnico N1/N2 e infraestrutura.
+- Conhecimentos em Windows, Windows Server, Linux, Active Directory, Microsoft 365, Veeam Backup, Zabbix, Grafana e Prometheus.
+- Projetos com foco em mobile, backend, automação, IA, infraestrutura e observabilidade.
+- Certificações da Alura e Cisco Networking Academy.
+- Roadmap de melhorias documentado em `docs/ROADMAP.md`.
+
 ---
 
 ## Funcionalidades
 
 - Página única com navegação por seções.
-- Menu fixo com versão responsiva para dispositivos móveis.
-- Menu mobile com suporte a fechamento por clique e tecla `Escape`.
-- Seção de apresentação com chamadas para projetos, contato e currículo.
-- Área "Sobre Mim" com resumo profissional.
-- Listagem de habilidades técnicas organizadas por categoria.
+- Menu fixo com versão responsiva para mobile.
+- Menu mobile com fechamento por clique e tecla `Escape`.
+- Hero com chamadas para projetos e contato.
+- Seção "Sobre Mim" com posicionamento profissional atualizado.
+- Listagem de habilidades por categoria.
+- Seção de experiência profissional.
 - Cards de projetos com descrição, funcionalidades, tecnologias e links externos.
 - Seção de formação acadêmica.
 - Carrossel interativo de certificações com setas, indicadores e arraste.
-- Certificados abertos em nova guia pela ação "Ver certificado".
+- Certificados abertos em nova guia.
 - Links diretos para email, GitHub e LinkedIn.
-- Layout responsivo para desktop, tablet e mobile.
+- Metadata SEO com Open Graph e Twitter Card.
 
 ---
 
@@ -53,6 +69,8 @@ O foco deste portfólio é funcionar como uma vitrine profissional para recrutad
 
 ```text
 portfolio-daniel-azevedo/
+|-- docs/
+|   `-- ROADMAP.md
 |-- public/
 |-- src/
 |   |-- app/
@@ -64,6 +82,7 @@ portfolio-daniel-azevedo/
 |   |   |   |-- AboutSection.tsx
 |   |   |   |-- ContactSection.tsx
 |   |   |   |-- EducationSection.tsx
+|   |   |   |-- ExperienceSection.tsx
 |   |   |   |-- Footer.tsx
 |   |   |   |-- HeroSection.tsx
 |   |   |   |-- ProjectsSection.tsx
@@ -85,24 +104,36 @@ portfolio-daniel-azevedo/
 
 ---
 
-## Objetivo
+## Conteúdo do Portfólio
 
-Reunir em um único lugar as principais informações sobre minha formação, habilidades, certificações e projetos desenvolvidos. A proposta é facilitar a avaliação técnica por recrutadores e demonstrar domínio de tecnologias modernas de frontend.
+### Seções
 
----
+- Início
+- Sobre
+- Habilidades
+- Experiência
+- Projetos
+- Formação e certificações
+- Contato
 
-## Destaques Técnicos
+### Habilidades
 
-- Componentização por seções para manter a página principal simples.
-- Dados centralizados em `src/constants/data.ts`.
-- Tipos compartilhados em `src/types/portfolio.ts`.
-- Estilos reutilizáveis centralizados em `src/constants/theme.ts`.
-- Projeto configurado com **TypeScript strict**.
-- SEO configurado com metadata, Open Graph e Twitter Card.
-- Carrossel de certificados com navegação por botões, indicadores e arraste.
-- Links de certificados externos abertos em nova guia.
-- Navegação mobile com atributos ARIA e suporte à tecla `Escape`.
-- Estrutura simples, escalável e fácil de manter.
+As habilidades estão organizadas em:
+
+- Frontend
+- Backend
+- Banco de Dados
+- Ferramentas
+- Infraestrutura
+- Redes e Observabilidade
+- Conceitos
+- Soft Skills
+- Idiomas
+
+### Experiência Profissional
+
+- **Técnico de Suporte N1 - Deployment** na Penso Tecnologia.
+- **Analista de Infraestrutura de TI** na Inovah Plast.
 
 ---
 
@@ -110,10 +141,11 @@ Reunir em um único lugar as principais informações sobre minha formação, ha
 
 ### Simpliza
 
-Aplicativo mobile desenvolvido em React Native para auxiliar MEIs e pequenos empreendedores no controle financeiro mensal.
+Aplicativo mobile full stack para auxiliar MEIs e pequenos empreendedores no controle financeiro mensal.
 
 Principais recursos:
 
+- Autenticação com Firebase.
 - Cadastro de ganhos e gastos.
 - Histórico financeiro mensal.
 - Gráficos comparativos.
@@ -121,40 +153,66 @@ Principais recursos:
 
 Repositório: [Simpliza-TCC](https://github.com/DanielAzeved0/Simpliza-TCC)
 
+### IT Center Security Cloud
+
+Plataforma full stack para monitoramento, inventário, observabilidade e segurança de ambientes Windows em nuvem.
+
+Principais recursos:
+
+- Monitoramento de ambientes Windows.
+- Inventário de ativos de TI.
+- Observabilidade de serviços e infraestrutura.
+- Automações operacionais com PowerShell.
+- Base estruturada para rotinas de segurança.
+
+Repositório: [it-center-security-cloud](https://github.com/DanielAzeved0/it-center-security-cloud)
+
 ### DeepArchive-Bridge
 
-Monorepo full stack para gerenciamento de vendas, com backend em ASP.NET Core 8 e frontend em Next.js. O projeto trabalha com autenticação JWT, SQLite e uma camada de arquivamento lógico.
+Monorepo full stack para gerenciamento de vendas, com backend em ASP.NET Core 8 e frontend em Next.js.
 
 Principais recursos:
 
 - CRUD completo de vendas.
 - Busca por período, cliente, status e paginação.
 - Aprovação de vendas pendentes.
-- Arquivamento lógico de registros antigos.
+- Autenticação JWT integrada ao frontend.
+- Arquivamento lógico para vendas antigas.
 - Integração entre API e frontend via Axios.
 
 Repositório: [DeepArchive-Bridge](https://github.com/DanielAzeved0/DeepArchive-Bridge)
 
-### Lista de Compras Mobile
+### MCP Prompt Generator
 
-Aplicativo mobile acadêmico para gerenciamento de listas de compras com autenticação, sincronização e cálculo automático de valores.
+Aplicação full stack local para transformar prompts, código, JSON e contexto em SPECs estruturadas.
 
 Principais recursos:
 
-- Perfil do usuário.
-- Tema claro e escuro.
-- Sincronização em tempo real.
-- Cálculo automático do valor total.
+- Classificação semântica de intents.
+- Seleção de templates.
+- Análise AST-aware.
+- Governança de providers com Gemini, Ollama e fallback seguro.
+- Suite golden para validação de contratos e regressões.
 
-Repositório: [trabalho-pamii](https://github.com/Eduardomarinho19/trabalho-pamii)
+Repositório: [mcp-task-manager](https://github.com/DanielAzeved0/mcp-task-manager)
 
 ---
 
-## Contato
+## Roadmap
 
-- Email: [daniel.azevedo081205@gmail.com](mailto:daniel.azevedo081205@gmail.com)
-- GitHub: [github.com/DanielAzeved0](https://github.com/DanielAzeved0)
-- LinkedIn: [Daniel Azevedo](https://www.linkedin.com/in/daniel-azevedo-403444321/)
+O plano de evolução do portfólio está documentado em:
+
+[docs/ROADMAP.md](docs/ROADMAP.md)
+
+O roadmap inclui tarefas marcáveis para:
+
+- Correções rápidas e responsividade.
+- Organização de código.
+- Criação de componentes reutilizáveis.
+- Centralização de tokens visuais.
+- Melhorias de identidade visual.
+- Acessibilidade.
+- SEO, performance e validação final.
 
 ---
 
@@ -214,6 +272,14 @@ Para executar a build localmente:
 ```bash
 npm run start
 ```
+
+---
+
+## Contato
+
+- Email: [daniel.azevedo081205@gmail.com](mailto:daniel.azevedo081205@gmail.com)
+- GitHub: [github.com/DanielAzeved0](https://github.com/DanielAzeved0)
+- LinkedIn: [Daniel Azevedo](https://www.linkedin.com/in/daniel-azevedo-403444321/)
 
 ---
 

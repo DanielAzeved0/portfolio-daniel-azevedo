@@ -16,7 +16,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 1.1 - Fazer deploy da versão local atual
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Publicar as alterações locais que ainda não aparecem no site da Vercel, incluindo a remoção do botão "Solicitar Currículo".
 
@@ -303,3 +303,19 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 - Deploy passa.
 - Site publicado reflete a versão final.
 
+### Task 6.3 - Corrigir codificação dos arquivos de documentação
+
+**Status:** [ ]
+
+**Objetivo:** Garantir que os textos da documentação sejam exibidos corretamente em português, sem caracteres quebrados como `PortfÃ³lio`, `CorreÃ§Ãµes` ou `nÃ£o`.
+
+**Escopo:**
+- Revisar a codificação de `README.md` e `docs/ROADMAP.md`.
+- Salvar os arquivos em UTF-8.
+- Conferir acentuação, cedilha e caracteres especiais nos textos.
+- Validar a leitura dos arquivos no editor e no terminal.
+
+**Critérios de aceite:**
+- A documentação exibe acentos e caracteres especiais corretamente.
+- Não há ocorrências visíveis de texto quebrado por codificação.
+- O Git registra apenas alterações intencionais de documentação.

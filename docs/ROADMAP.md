@@ -34,7 +34,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 1.2 - Corrigir Hero no mobile
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Evitar corte horizontal no título e nos botões da primeira seção em telas pequenas.
 

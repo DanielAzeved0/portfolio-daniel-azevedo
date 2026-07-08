@@ -7,7 +7,7 @@ export default function ProjectsSection() {
     <section id="projects" className={`${SECTION_STYLES.container} bg-[#E0E0E0]`}>
       <div className="max-w-6xl mx-auto">
         <h2 className={SECTION_STYLES.title}>Projetos</h2>
-        <div className="mb-12 space-y-12">
+        <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {PROJECTS.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}

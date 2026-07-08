@@ -3,7 +3,7 @@ import { BUTTON_STYLES } from '@/constants/theme';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#333333] to-[#4A90E2]/20">
+    <section id="home" className="pt-28 pb-14 sm:pt-32 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#333333] to-[#4A90E2]/20">
       <div className="max-w-7xl mx-auto min-w-0 text-center">
         <div className="animate-fade-in min-w-0">
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight text-white mb-6 break-words">

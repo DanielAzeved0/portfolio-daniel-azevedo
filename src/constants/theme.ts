@@ -23,7 +23,7 @@ export const BUTTON_STYLES = {
 };
 
 export const SECTION_STYLES = {
-  title: 'text-4xl font-bold text-center mb-12 text-[#4A90E2]',
-  container: 'py-20 px-4 sm:px-6 lg:px-8',
+  title: 'text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-[#4A90E2]',
+  container: 'py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8',
   card: 'bg-white p-8 rounded-2xl border border-[#333333]/10 shadow-lg',
 };

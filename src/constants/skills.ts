@@ -27,15 +27,15 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     category: 'Conceitos',
-    skills: ['CRUD', 'Scrum', 'API REST', 'Responsividade', 'Service Desk', 'InventÃ¡rio de ativos'],
+    skills: ['CRUD', 'Scrum', 'API REST', 'Responsividade', 'Service Desk', 'Inventário de ativos'],
   },
   {
     category: 'Soft Skills',
-    skills: ['Trabalho em equipe', 'ComunicaÃ§Ã£o', 'ResoluÃ§Ã£o de problemas', 'Criatividade', 'Adaptabilidade'],
+    skills: ['Trabalho em equipe', 'Comunicação', 'Resolução de problemas', 'Criatividade', 'Adaptabilidade'],
   },
   {
     category: 'Idiomas',
-    skills: ['InglÃªs intermediÃ¡rio', 'Espanhol bÃ¡sico'],
+    skills: ['Inglês intermediário', 'Espanhol básico'],
   },
 ];
 

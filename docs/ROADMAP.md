@@ -176,12 +176,16 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 **Objetivo:** Tornar o carrossel de certificados mais previsível para teclado e leitores de tela.
 
 **Escopo:**
+- Manter o agrupamento por categoria de certificados.
+- Exibir cada grupo como um carrossel visual mais óbvio, com deslize ou navegação clara.
 - Adicionar região com nome acessível.
 - Melhorar `aria-label` dos controles.
 - Garantir navegação por teclado.
 - Considerar feedback textual de item atual.
 
 **Critérios de aceite:**
+- O componente continua agrupado por categoria.
+- Cada categoria se comporta como um carrossel visível.
 - Botões do carrossel são claros para leitores de tela.
 - Usuário consegue navegar sem mouse.
 - O estado atual do carrossel é compreensível.

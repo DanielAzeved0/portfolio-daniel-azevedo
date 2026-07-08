@@ -17,6 +17,10 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   const maxIndex = Math.max(certifications.length - 1, 0);
 
   useEffect(() => {
+    setActiveIndex(0);
+  }, [certifications]);
+
+  useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
@@ -110,7 +114,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   return (
     <div className="relative overflow-hidden">
       <div className="mb-6 flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold text-[rgba(51,51,51,0.7)]">
+        <p className="text-sm font-semibold text-[rgba(51,51,51,0.7)]" aria-live="polite">
           {activeIndex + 1} de {certifications.length}
         </p>
         <div className="flex gap-3">
@@ -148,6 +152,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
         onPointerCancel={stopDragging}
         onKeyDown={handleKeyDown}
         role="region"
+        aria-roledescription="carousel"
         aria-label="Carrossel de certificados"
         tabIndex={0}
       >

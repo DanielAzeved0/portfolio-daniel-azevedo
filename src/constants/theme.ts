@@ -17,13 +17,13 @@ export const COLORS = {
 
 // Classes Tailwind reutilizáveis
 export const BUTTON_STYLES = {
-  primary: 'px-8 py-3 bg-[#00B0FF] text-white rounded-full font-semibold hover:bg-[#4A90E2] hover:shadow-lg hover:shadow-[#00B0FF]/50 transition-all',
-  outline: 'px-8 py-3 border-2 border-[#4A90E2] bg-[#F5F5F5] text-[#333333] rounded-full font-semibold hover:bg-white hover:border-[#00B0FF] hover:shadow-lg transition-all',
-  ghost: 'flex items-center gap-2 px-6 py-3 bg-transparent border border-[#E0E0E0] rounded-full text-[#E0E0E0] hover:border-[#4A90E2] hover:text-[#4A90E2] transition-all',
+  primary: 'px-8 py-3 bg-[var(--accent-secondary)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] hover:shadow-lg transition-all',
+  outline: 'px-8 py-3 border-2 border-[var(--accent-primary)] bg-[var(--background)] text-[var(--foreground)] rounded-full font-semibold hover:bg-white hover:border-[var(--accent-secondary)] hover:shadow-lg transition-all',
+  ghost: 'flex items-center gap-2 px-6 py-3 bg-transparent border border-[var(--background)] rounded-full text-[var(--background)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-all',
 };
 
 export const SECTION_STYLES = {
-  title: 'text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-[#4A90E2]',
+  title: 'text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-[var(--accent-primary)]',
   container: 'py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8',
-  card: 'bg-white p-8 rounded-2xl border border-[#333333]/10 shadow-lg',
+  card: 'bg-white p-8 rounded-2xl border border-[rgba(51,51,51,0.1)] shadow-lg',
 };

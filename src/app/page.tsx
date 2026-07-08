@@ -10,7 +10,7 @@ import SkillsSection from '@/components/sections/SkillsSection';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#E0E0E0]">
+    <div className="min-h-screen bg-[var(--background)]">
       <Navigation />
       <HeroSection />
       <AboutSection />

@@ -6,10 +6,10 @@ type SectionTone = 'light' | 'white' | 'dark' | 'hero';
 type SectionWidth = 'md' | 'lg' | 'xl';
 
 const toneClasses: Record<SectionTone, string> = {
-  light: 'bg-[#E0E0E0]',
+  light: 'bg-[var(--background)]',
   white: 'bg-white',
-  dark: 'bg-[#333333]',
-  hero: 'bg-gradient-to-br from-[#333333] to-[#4A90E2]/20',
+  dark: 'bg-[var(--foreground)]',
+  hero: 'bg-gradient-to-br from-[var(--foreground)] to-[var(--accent-primary)]/20',
 };
 
 const widthClasses: Record<SectionWidth, string> = {

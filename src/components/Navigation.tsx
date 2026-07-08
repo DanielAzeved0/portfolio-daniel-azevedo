@@ -24,12 +24,12 @@ export default function Navigation() {
   }, [menuOpen]);
 
   return (
-    <nav className="fixed w-full bg-[#333333] backdrop-blur-sm z-50 border-b border-[#4A90E2]/30">
+    <nav className="fixed w-full bg-[var(--foreground)] backdrop-blur-sm z-50 border-b border-[rgba(74,144,226,0.3)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <a
             href="#home"
-            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4A90E2] to-[#00B0FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00B0FF]"
+            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-secondary)]"
             aria-label={`Ir para o início do portfólio de ${PERSONAL_INFO.name}`}
           >
             DA
@@ -41,7 +41,7 @@ export default function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-[#E0E0E0] hover:text-[#4A90E2] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00B0FF]"
+                className="text-[var(--background)] hover:text-[var(--accent-primary)] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-secondary)]"
               >
                 {item.label}
               </a>
@@ -50,7 +50,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-[#E0E0E0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00B0FF]"
+            className="md:hidden text-[var(--background)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-secondary)]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
@@ -73,7 +73,7 @@ export default function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="block py-2 text-[#E0E0E0] hover:text-[#4A90E2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00B0FF]"
+                className="block py-2 text-[var(--background)] hover:text-[var(--accent-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-secondary)]"
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}

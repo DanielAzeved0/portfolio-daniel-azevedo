@@ -53,6 +53,7 @@ export interface Certification {
   id: string;
   title: string;
   institution: string;
+  category?: string;
   date?: string;
   duration?: string;
   icon: string;

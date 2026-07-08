@@ -103,7 +103,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 2.3 - Centralizar tokens visuais
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Evitar cores hardcoded espalhadas pelos componentes.
 
@@ -121,7 +121,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 3.1 - Reforçar identidade visual do Hero
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Tornar a primeira dobra mais memorável e profissional.
 
@@ -137,7 +137,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 3.2 - Melhorar diferenciação entre seções
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Reduzir a sensação de blocos repetitivos e cinza em sequência.
 

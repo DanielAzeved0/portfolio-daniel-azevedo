@@ -17,8 +17,8 @@ export default function ExperienceSection() {
                 <Badge variant="soft" className="mb-3">
                   {experience.period}
                 </Badge>
-                <h3 className="text-2xl font-bold text-[#333333]">{experience.role}</h3>
-                <p className="mt-1 font-semibold text-[#4A90E2]">
+                <h3 className="text-2xl font-bold text-[var(--foreground)]">{experience.role}</h3>
+                <p className="mt-1 font-semibold text-[var(--accent-primary)]">
                   {experience.company}
                   {experience.type ? ` · ${experience.type}` : ''}
                 </p>
@@ -27,8 +27,8 @@ export default function ExperienceSection() {
 
             <ul className="mb-6 grid gap-3 md:grid-cols-2">
               {experience.highlights.map((highlight) => (
-                <li key={highlight} className="flex items-start gap-2 text-[#333333]">
-                  <svg className="mt-1 h-4 w-4 flex-shrink-0 text-[#00B0FF]" fill="currentColor" viewBox="0 0 20 20">
+                <li key={highlight} className="flex items-start gap-2 text-[var(--foreground)]">
+                  <svg className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--accent-secondary)]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>{highlight}</span>

@@ -3,12 +3,12 @@ import { BUTTON_STYLES, SECTION_STYLES } from '@/constants/theme';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className={`${SECTION_STYLES.container} bg-[#333333]`}>
+    <section id="contact" className={`${SECTION_STYLES.container} bg-[var(--foreground)]`}>
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12 text-[#E0E0E0]">
+        <h2 className="text-4xl font-bold mb-12 text-[var(--background)]">
           Entre em Contato
         </h2>
-        <p className="text-[#E0E0E0] text-lg mb-8">
+        <p className="text-[var(--background)] text-lg mb-8">
           Estou disponível para oportunidades de estágio, projetos freelance ou apenas para conversar sobre tecnologia.
         </p>
         <div className="flex gap-6 justify-center flex-wrap">
@@ -32,7 +32,7 @@ export default function ContactSection() {
           </a>
           <a
             href={`mailto:${PERSONAL_INFO.email}?subject=Contato do Portfolio&body=Olá Daniel,%0D%0A%0D%0AEstou interessado em conversar sobre...`}
-            className="flex items-center gap-2 px-6 py-3 bg-[#00B0FF] text-white rounded-full font-semibold hover:bg-[#4A90E2] transition-all"
+            className="flex items-center gap-2 px-6 py-3 bg-[var(--accent-secondary)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] transition-all"
             aria-label="Enviar mensagem"
           >
             Enviar Mensagem

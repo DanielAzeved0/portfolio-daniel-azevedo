@@ -100,7 +100,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   return (
     <div className="relative overflow-hidden">
       <div className="mb-6 flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold text-[#333333]/70">
+        <p className="text-sm font-semibold text-[rgba(51,51,51,0.7)]">
           {activeIndex + 1} de {certifications.length}
         </p>
         <div className="flex gap-3">
@@ -108,7 +108,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
             type="button"
             onClick={() => moveBy(-1)}
             disabled={activeIndex === 0}
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#4A90E2]/40 bg-white text-[#333333] transition-all hover:border-[#00B0FF] hover:text-[#00B0FF] disabled:cursor-not-allowed disabled:opacity-40"
+            className="grid h-11 w-11 place-items-center rounded-full border border-[rgba(74,144,226,0.4)] bg-white text-[var(--foreground)] transition-all hover:border-[var(--accent-secondary)] hover:text-[var(--accent-secondary)] disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Certificado anterior"
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
             type="button"
             onClick={() => moveBy(1)}
             disabled={activeIndex === maxIndex}
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#4A90E2]/40 bg-white text-[#333333] transition-all hover:border-[#00B0FF] hover:text-[#00B0FF] disabled:cursor-not-allowed disabled:opacity-40"
+            className="grid h-11 w-11 place-items-center rounded-full border border-[rgba(74,144,226,0.4)] bg-white text-[var(--foreground)] transition-all hover:border-[var(--accent-secondary)] hover:text-[var(--accent-secondary)] disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Próximo certificado"
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,32 +144,32 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
             className="w-[86%] flex-none snap-center sm:w-[58%] lg:w-[38%]"
             aria-current={activeIndex === index ? 'true' : undefined}
           >
-            <article className="flex h-full min-h-64 flex-col justify-between bg-white p-6 rounded-xl border-2 border-[#333333]/20 transition-all hover:border-[#00B0FF] hover:shadow-lg">
+            <article className="flex h-full min-h-64 flex-col justify-between bg-white p-6 rounded-xl border-2 border-[rgba(51,51,51,0.2)] transition-all hover:border-[var(--accent-secondary)] hover:shadow-lg">
               <div>
                 <div className="mb-5 flex items-start justify-between gap-4">
-                  <div className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-xl bg-[#E0E0E0] text-3xl">
+                  <div className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-xl bg-[var(--background)] text-3xl">
                     {cert.icon}
                   </div>
-                  <span className="rounded-full bg-[#00B0FF]/10 px-3 py-1 text-xs font-bold text-[#4A90E2]">
+                  <span className="rounded-full bg-[rgba(0,176,255,0.1)] px-3 py-1 text-xs font-bold text-[var(--accent-primary)]">
                     {cert.duration ?? cert.institution}
                   </span>
                 </div>
-                <h4 className="mb-4 text-xl font-bold leading-tight text-[#333333]">
+                <h4 className="mb-4 text-xl font-bold leading-tight text-[var(--foreground)]">
                   {cert.title}
                 </h4>
               </div>
 
               <div>
-                <p className="mb-1 font-semibold text-[#4A90E2]">{cert.institution}</p>
+                <p className="mb-1 font-semibold text-[var(--accent-primary)]">{cert.institution}</p>
                 {cert.date && (
-                  <p className="text-sm text-[#333333]/75">Finalizado em {cert.date}</p>
+                  <p className="text-sm text-[rgba(51,51,51,0.75)]">Finalizado em {cert.date}</p>
                 )}
                 {cert.certificateUrl && (
                   <a
                     href={cert.certificateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#00B0FF] transition-colors hover:text-[#4A90E2]"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--accent-secondary)] transition-colors hover:text-[var(--accent-primary)]"
                   >
                     Ver certificado
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
             type="button"
             onClick={() => scrollToSlide(index)}
             className={`h-2.5 rounded-full transition-all ${
-              activeIndex === index ? 'w-9 bg-[#00B0FF]' : 'w-2.5 bg-[#333333]/25 hover:bg-[#4A90E2]/60'
+              activeIndex === index ? 'w-9 bg-[var(--accent-secondary)]' : 'w-2.5 bg-[rgba(51,51,51,0.25)] hover:bg-[rgba(74,144,226,0.6)]'
             }`}
             aria-label={`Ir para certificado ${index + 1}`}
           />

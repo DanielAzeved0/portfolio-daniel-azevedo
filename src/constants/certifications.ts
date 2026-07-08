@@ -5,6 +5,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'logica-programacao-javascript',
     title: 'LÃ³gica de ProgramaÃ§Ã£o: Mergulhe em ProgramaÃ§Ã£o com JavaScript',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '04 de fevereiro de 2026',
     duration: '6 horas',
     icon: 'ðŸ’»',
@@ -15,6 +16,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'logica-programacao-funcoes-listas',
     title: 'LÃ³gica de ProgramaÃ§Ã£o: Explore FunÃ§Ãµes e Listas',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '13 de fevereiro de 2026',
     duration: '6 horas',
     icon: 'ðŸ§ ',
@@ -25,6 +27,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'git-github-colaborando-projetos',
     title: 'Git e GitHub: Compartilhando e Colaborando em Projetos',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '14 de fevereiro de 2026',
     duration: '8 horas',
     icon: 'ðŸ”€',
@@ -35,6 +38,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'csharp-primeira-aplicacao',
     title: 'C#: Criando Sua Primeira AplicaÃ§Ã£o',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '12 de marÃ§o de 2026',
     duration: '8 horas',
     icon: 'ðŸ’»',
@@ -45,6 +49,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'csharp-orientacao-objetos',
     title: 'C#: Aplicando a OrientaÃ§Ã£o a Objetos',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '15 de marÃ§o de 2026',
     duration: '8 horas',
     icon: 'ðŸ”§',
@@ -55,6 +60,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'csharp-dominando-orientacao-objetos',
     title: 'C#: Dominando OrientaÃ§Ã£o a Objetos',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '2026',
     duration: '8 horas',
     icon: 'ðŸ§©',
@@ -65,6 +71,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'csharp-api-arquivos-linq',
     title: 'C#: Consumindo API, Gravando Arquivos e Utilizando o LINQ',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '2026',
     duration: '8 horas',
     icon: 'ðŸ”—',
@@ -75,6 +82,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'csharp-excecoes-aplicacoes-resilientes',
     title: 'C# e ExceÃ§Ãµes: Construa AplicaÃ§Ãµes Resilientes',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     date: '24 de marÃ§o de 2026',
     duration: '8 horas',
     icon: 'ðŸ›¡ï¸',
@@ -85,6 +93,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'linux-script-processamento-arquivos-logs',
     title: 'Linux: Criando um Script para Processamento de Arquivos de Logs',
     institution: 'Alura',
+    category: 'Linux',
     icon: 'ðŸ§',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/linux-criando-script-processamento-arquivos-logs/certificate',
@@ -93,6 +102,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'python-primeira-aplicacao',
     title: 'Python: Crie a Sua Primeira AplicaÃ§Ã£o',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     icon: 'ðŸ',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/python-crie-sua-primeira-aplicacao/certificate',
@@ -101,6 +111,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'pentest-vulnerabilidades-aplicacoes-web',
     title: 'Pentest: Explorando Vulnerabilidades em AplicaÃ§Ãµes Web',
     institution: 'Alura',
+    category: 'Segurança',
     icon: 'ðŸ›¡ï¸',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/pentest-explorando-vulnerabilidades-aplicacoes-web/certificate',
@@ -109,6 +120,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'linux-script-monitoramento-sistema',
     title: 'Linux: Criando um Script de Monitoramento do Sistema',
     institution: 'Alura',
+    category: 'Linux',
     icon: 'ðŸ“Š',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/linux-criando-script-monitoramento-sistema/certificate',
@@ -117,6 +129,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'linux-diretorios-arquivos-permissoes-processos',
     title: 'Linux: Gerenciando DiretÃ³rios, Arquivos, PermissÃµes e Processos',
     institution: 'Alura',
+    category: 'Linux',
     icon: 'ðŸ—‚ï¸',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/linux-gerenciando-diretorios-arquivos-permissoes-processos/certificate',
@@ -125,6 +138,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'redes-conceitos-iniciais-intranet',
     title: 'Redes: Conceitos Iniciais e CriaÃ§Ã£o de uma Intranet',
     institution: 'Alura',
+    category: 'Redes',
     icon: 'ðŸŒ',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-conceitos-iniciais-criacao-intranet/certificate',
@@ -133,6 +147,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'redes-roteamento-dns-ipv6',
     title: 'Redes: Implementando Roteamento, DNS e IPv6',
     institution: 'Alura',
+    category: 'Redes',
     icon: 'ðŸ–§',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-implementando-roteamento-dns-ipv6/certificate',
@@ -141,6 +156,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'redes-vlans-politicas-acesso-internet',
     title: 'Redes: Projeto de VLANs, PolÃ­ticas de Acesso e ConexÃ£o com a Internet',
     institution: 'Alura',
+    category: 'Redes',
     icon: 'ðŸ”€',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-projeto-vlans-politicas-acesso-conexao-internet/certificate',
@@ -149,6 +165,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'http-web-por-baixo-dos-panos',
     title: 'HTTP: Entendendo a Web por Baixo dos Panos',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     icon: 'ðŸ”—',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/http-entendendo-web-por-baixo-dos-panos/certificate',
@@ -157,6 +174,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'redes-wifi-rede-sem-fio-segura',
     title: 'Redes Wi-Fi: Criando uma Rede Sem Fio de Modo Seguro',
     institution: 'Alura',
+    category: 'Redes',
     icon: 'ðŸ“¡',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/redes-wi-fi-rede-sem-fio-modo-seguro/certificate',
@@ -165,6 +183,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'computacao-fundamentos-pensamento-computacional',
     title: 'ComputaÃ§Ã£o: Fundamentos da ComputaÃ§Ã£o e Pensamento Computacional',
     institution: 'Alura',
+    category: 'Desenvolvimento',
     icon: 'ðŸ§ ',
     certificateUrl:
       'https://cursos.alura.com.br/user/daniel-azevedo081205/course/computacao-fundamentos-computacao-pensamento-computacional/certificate',
@@ -173,6 +192,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'cisco-networking-basics',
     title: 'Networking Basics',
     institution: 'Cisco',
+    category: 'Cisco',
     date: '2025',
     icon: 'ðŸŒ',
     certificateUrl:
@@ -182,6 +202,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'cisco-networking-devices-initial-configuration',
     title: 'Networking Devices and Initial Configuration',
     institution: 'Cisco',
+    category: 'Cisco',
     icon: 'ðŸ–§',
     certificateUrl:
       'https://www.credly.com/badges/849541e1-168e-45db-bde0-3097600a61ad',
@@ -190,6 +211,7 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'cisco-introduction-cybersecurity',
     title: 'Introduction to Cybersecurity',
     institution: 'Cisco',
+    category: 'Cisco',
     date: '2025',
     icon: 'ðŸ”’',
     certificateUrl:

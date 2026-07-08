@@ -156,15 +156,18 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
         aria-label="Carrossel de certificados"
         tabIndex={0}
       >
-        {certifications.map((cert, index) => (
-          <div
-            key={cert.id}
-            data-carousel-slide
-            className="w-[86%] flex-none snap-center sm:w-[58%] lg:w-[38%]"
-            aria-current={activeIndex === index ? 'true' : undefined}
-            aria-label={`Slide ${index + 1} de ${certifications.length}: ${cert.title}`}
-          >
-            <article className="flex h-full min-h-64 flex-col justify-between bg-white p-6 rounded-xl border-2 border-[rgba(51,51,51,0.2)] transition-all hover:border-[var(--accent-secondary)] hover:shadow-lg">
+        {certifications.map((cert, index) => {
+          const isActive = activeIndex === index;
+          return (
+            <div
+              key={cert.id}
+              data-carousel-slide
+              className={`w-[92%] flex-none snap-center sm:w-[72%] lg:w-[60%] ${isActive ? 'opacity-100 scale-100' : 'opacity-70 scale-95'}`}
+              aria-current={isActive ? 'true' : undefined}
+              aria-label={`Slide ${index + 1} de ${certifications.length}: ${cert.title}`}
+              style={{ transition: 'transform 500ms ease, opacity 500ms ease' }}
+            >
+              <article className="flex h-full min-h-64 flex-col justify-between bg-white p-6 rounded-xl border-2 border-[rgba(51,51,51,0.2)] transition-all duration-500 ease-out hover:border-[var(--accent-secondary)] hover:shadow-lg">
               <div>
                 <div className="mb-5 flex items-start justify-between gap-4">
                   <div className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-xl bg-[var(--background)] text-3xl">

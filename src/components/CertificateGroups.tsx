@@ -43,7 +43,11 @@ export default function CertificateGroups({ certifications }: CertificateGroupsP
         })}
       </div>
 
-      <div className="mt-6" role="tabpanel" aria-labelledby={`cert-category-tab-${activeCategory}`}>
+      <div
+        className="mt-6"
+        role="tabpanel"
+        aria-labelledby={`cert-category-tab-${activeCategory.replace(/\s+/g, '-').toLowerCase()}`}
+      >
         {activeCertifications.length > 0 ? (
           <CertificateCarousel certifications={activeCertifications} />
         ) : (

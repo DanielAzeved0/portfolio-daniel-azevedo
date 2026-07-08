@@ -190,7 +190,25 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 - Usuário consegue navegar sem mouse.
 - O estado atual do carrossel é compreensível.
 
-### Task 4.2 - Respeitar preferências de movimento
+### Task 4.2 - Tornar o carrossel de certificados mais fluido
+
+**Status:** [ ]
+
+**Objetivo:** Manter os filtros por categoria, mas reforçar a sensação de slider com transições mais suaves.
+
+**Escopo:**
+- Reduzir a largura dos cards em telas maiores para destacar um ou dois slides por vez.
+- Aplicar transições de `transform` e `opacity` ao slide ativo.
+- Manter `scroll-smooth` e `snap-center` para navegação natural.
+- Preservar navegação por teclado e indicadores de slide.
+
+**Critérios de aceite:**
+- O grupo por categoria permanece ativo.
+- O destaque visual do slide atual é mais evidente.
+- A movimentação parece mais fluida e menos rígida.
+- O carrossel segue acessível para teclado.
+
+### Task 4.3 - Respeitar preferências de movimento
 
 **Status:** [ ]
 
@@ -205,7 +223,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 - Usuários com redução de movimento não recebem animações desnecessárias.
 - A navegação continua funcional.
 
-### Task 4.3 - Melhorar estados de foco
+### Task 4.4 - Melhorar estados de foco
 
 **Status:** [ ]
 

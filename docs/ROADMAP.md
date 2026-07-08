@@ -192,7 +192,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 4.2 - Tornar o carrossel de certificados mais fluido
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Manter os filtros por categoria, mas reforçar a sensação de slider com transições mais suaves.
 

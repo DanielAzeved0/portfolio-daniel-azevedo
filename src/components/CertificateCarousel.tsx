@@ -203,7 +203,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
               </div>
             </article>
           </div>
-        ))}
+        })}
       </div>
 
       <div className="flex justify-center gap-2">

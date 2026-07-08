@@ -51,7 +51,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 1.3 - Ajustar espaçamento vertical das seções
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Melhorar o ritmo visual entre Hero, Sobre, Habilidades, Experiência e Projetos.
 
@@ -69,7 +69,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 2.1 - Separar dados por domínio
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Reduzir o tamanho de `src/constants/data.ts` e facilitar manutenção dos conteúdos.
 

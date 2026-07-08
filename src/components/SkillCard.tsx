@@ -1,19 +1,18 @@
+import Badge from '@/components/ui/Badge';
+import Card from '@/components/ui/Card';
 import type { SkillCategory } from '@/types/portfolio';
 
 export default function SkillCard({ category, skills }: SkillCategory) {
   return (
-    <article className="bg-[#E0E0E0] p-6 rounded-xl border border-[#333333]/20 hover:border-[#00B0FF] hover:shadow-lg transition-all">
+    <Card variant="muted">
       <h3 className="text-xl font-bold text-[#333333] mb-4">{category}</h3>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
-          <span
-            key={skill}
-            className="px-3 py-1 bg-white text-[#333333] rounded-full text-sm border border-[#4A90E2]/30"
-          >
+          <Badge key={skill} variant="outline" className="bg-white text-sm font-normal text-[#333333]">
             {skill}
-          </span>
+          </Badge>
         ))}
       </div>
-    </article>
+    </Card>
   );
 }

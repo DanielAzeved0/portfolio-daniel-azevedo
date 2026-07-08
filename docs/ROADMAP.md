@@ -85,7 +85,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 2.2 - Criar componentes base reutilizáveis
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Diminuir repetição de Tailwind e padronizar UI.
 

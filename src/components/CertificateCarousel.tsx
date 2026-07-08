@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import type { PointerEvent } from 'react';
+import type { KeyboardEvent, PointerEvent } from 'react';
 import type { Certification } from '@/types/portfolio';
 
 interface CertificateCarouselProps {
@@ -97,6 +97,16 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
     dragState.current.dragging = false;
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      moveBy(1);
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      moveBy(-1);
+    }
+  };
+
   return (
     <div className="relative overflow-hidden">
       <div className="mb-6 flex items-center justify-between gap-4">
@@ -136,6 +146,10 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
         onPointerMove={handlePointerMove}
         onPointerUp={stopDragging}
         onPointerCancel={stopDragging}
+        onKeyDown={handleKeyDown}
+        role="region"
+        aria-label="Carrossel de certificados"
+        tabIndex={0}
       >
         {certifications.map((cert, index) => (
           <div
@@ -143,6 +157,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
             data-carousel-slide
             className="w-[86%] flex-none snap-center sm:w-[58%] lg:w-[38%]"
             aria-current={activeIndex === index ? 'true' : undefined}
+            aria-label={`Slide ${index + 1} de ${certifications.length}: ${cert.title}`}
           >
             <article className="flex h-full min-h-64 flex-col justify-between bg-white p-6 rounded-xl border-2 border-[rgba(51,51,51,0.2)] transition-all hover:border-[var(--accent-secondary)] hover:shadow-lg">
               <div>

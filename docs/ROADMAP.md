@@ -153,7 +153,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 3.3 - Reorganizar certificados por categoria
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Facilitar leitura da grande quantidade de cursos e reduzir dependência de carrossel longo.
 
@@ -171,7 +171,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 4.1 - Melhorar acessibilidade do carrossel
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Tornar o carrossel de certificados mais previsível para teclado e leitores de tela.
 

@@ -16,10 +16,13 @@ export const COLORS = {
 };
 
 // Classes Tailwind reutilizáveis
+export const FOCUS_STYLES =
+  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)] focus-visible:ring-4 focus-visible:ring-[var(--focus-ring-soft)]';
+
 export const BUTTON_STYLES = {
-  primary: 'px-8 py-3 bg-[var(--accent-secondary)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] hover:shadow-lg transition-all',
-  outline: 'px-8 py-3 border-2 border-[var(--accent-primary)] bg-[var(--background)] text-[var(--foreground)] rounded-full font-semibold hover:bg-white hover:border-[var(--accent-secondary)] hover:shadow-lg transition-all',
-  ghost: 'flex items-center gap-2 px-6 py-3 bg-transparent border border-[var(--background)] rounded-full text-[var(--background)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-all',
+  primary: `px-8 py-3 bg-[var(--accent-secondary)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] hover:shadow-lg transition-all ${FOCUS_STYLES}`,
+  outline: `px-8 py-3 border-2 border-[var(--accent-primary)] bg-[var(--background)] text-[var(--foreground)] rounded-full font-semibold hover:bg-white hover:border-[var(--accent-secondary)] hover:shadow-lg transition-all ${FOCUS_STYLES}`,
+  ghost: `flex items-center gap-2 px-6 py-3 bg-transparent border border-[var(--background)] rounded-full text-[var(--background)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-all ${FOCUS_STYLES}`,
 };
 
 export const SECTION_STYLES = {

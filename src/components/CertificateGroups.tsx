@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import CertificateCarousel from '@/components/CertificateCarousel';
+import { FOCUS_STYLES } from '@/constants/theme';
 import type { Certification } from '@/types/portfolio';
 
 interface CertificateGroupsProps {
@@ -31,7 +32,7 @@ export default function CertificateGroups({ certifications }: CertificateGroupsP
               role="tab"
               aria-selected={isActive}
               onClick={() => setActiveCategory(category)}
-              className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] ${
+              className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all ${FOCUS_STYLES} ${
                 isActive
                   ? 'border-[var(--accent-secondary)] bg-[var(--accent-secondary)] text-white'
                   : 'border-[rgba(51,51,51,0.15)] bg-[var(--background)] text-[var(--foreground)] hover:border-[var(--accent-secondary)] hover:text-[var(--accent-secondary)]'

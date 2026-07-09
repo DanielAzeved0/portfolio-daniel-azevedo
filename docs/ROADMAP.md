@@ -210,7 +210,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 4.3 - Respeitar preferências de movimento
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Evitar animações para usuários com `prefers-reduced-motion`.
 
@@ -225,7 +225,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 4.4 - Melhorar estados de foco
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Garantir navegação clara por teclado.
 

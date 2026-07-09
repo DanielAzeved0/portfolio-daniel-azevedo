@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { PointerEvent, KeyboardEvent } from 'react';
+import { FOCUS_STYLES } from '@/constants/theme';
 import type { Certification } from '@/types/portfolio';
 
 interface CertificateCarouselProps {
@@ -12,6 +13,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   const trackRef = useRef<HTMLDivElement | null>(null);
   const dragState = useRef({ active: false, dragging: false, startX: 0, scrollLeft: 0 });
   const [activeIndex, setActiveIndex] = useState(0);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   const dragThreshold = 8;
   const maxIndex = Math.max(certifications.length - 1, 0);
@@ -19,6 +21,17 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   useEffect(() => {
     setActiveIndex(0);
   }, [certifications]);
+
+  useEffect(() => {
+    if (!window.matchMedia) return;
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updatePreference();
+    mediaQuery.addEventListener('change', updatePreference);
+    return () => mediaQuery.removeEventListener('change', updatePreference);
+  }, []);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -48,7 +61,8 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
     const track = trackRef.current;
     const slide = track?.querySelectorAll<HTMLElement>('[data-carousel-slide]')[index];
     if (!track || !slide) return;
-    track.scrollTo({ left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2, behavior: 'smooth' });
+    const behavior: ScrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+    track.scrollTo({ left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2, behavior });
   };
 
   const moveBy = (dir: -1 | 1) => scrollToSlide(Math.min(Math.max(activeIndex + dir, 0), maxIndex));
@@ -84,17 +98,17 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-visible">
       <div className="mb-6 flex items-center justify-between gap-4">
         <p className="text-sm font-semibold text-[rgba(51,51,51,0.7)]" aria-live="polite">{activeIndex + 1} de {certifications.length}</p>
         <div className="flex gap-3">
-          <button type="button" onClick={() => moveBy(-1)} disabled={activeIndex === 0} aria-label="Certificado anterior" className="grid h-11 w-11 place-items-center rounded-full border bg-white">◀</button>
-          <button type="button" onClick={() => moveBy(1)} disabled={activeIndex === maxIndex} aria-label="Próximo certificado" className="grid h-11 w-11 place-items-center rounded-full border bg-white">▶</button>
+          <button type="button" onClick={() => moveBy(-1)} disabled={activeIndex === 0} aria-label="Certificado anterior" className={`grid h-11 w-11 place-items-center rounded-full border bg-white disabled:cursor-not-allowed disabled:opacity-45 ${FOCUS_STYLES}`}>◀</button>
+          <button type="button" onClick={() => moveBy(1)} disabled={activeIndex === maxIndex} aria-label="Próximo certificado" className={`grid h-11 w-11 place-items-center rounded-full border bg-white disabled:cursor-not-allowed disabled:opacity-45 ${FOCUS_STYLES}`}>▶</button>
         </div>
       </div>
 
       <div ref={trackRef}
-        className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className={`flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${FOCUS_STYLES}`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={stopDragging}
@@ -128,7 +142,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
                   <p className="mb-1 font-semibold text-[var(--accent-primary)]">{cert.institution}</p>
                   {cert.date && <p className="text-sm text-[rgba(51,51,51,0.75)]">Finalizado em {cert.date}</p>}
                   {cert.certificateUrl && (
-                    <a href={cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--accent-secondary)]">
+                    <a href={cert.certificateUrl} target="_blank" rel="noopener noreferrer" className={`mt-5 inline-flex items-center gap-2 rounded-sm text-sm font-bold text-[var(--accent-secondary)] ${FOCUS_STYLES}`}>
                       Ver certificado
                     </a>
                   )}
@@ -141,7 +155,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
 
       <div className="flex justify-center gap-2">
         {certifications.map((cert, index) => (
-          <button key={cert.id} type="button" onClick={() => scrollToSlide(index)} aria-label={`Ir para certificado ${index + 1}`} className={`h-2.5 rounded-full transition-all ${activeIndex === index ? 'w-9 bg-[var(--accent-secondary)]' : 'w-2.5 bg-[rgba(51,51,51,0.25)]'}`} />
+          <button key={cert.id} type="button" onClick={() => scrollToSlide(index)} aria-label={`Ir para certificado ${index + 1}`} className={`h-3 rounded-full transition-all ${FOCUS_STYLES} ${activeIndex === index ? 'w-9 bg-[var(--accent-secondary)]' : 'w-3 bg-[rgba(51,51,51,0.25)]'}`} />
         ))}
       </div>
     </div>

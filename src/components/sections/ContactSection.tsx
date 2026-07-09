@@ -1,5 +1,5 @@
 import { PERSONAL_INFO } from '@/constants/data';
-import { BUTTON_STYLES, SECTION_STYLES } from '@/constants/theme';
+import { BUTTON_STYLES, FOCUS_STYLES, SECTION_STYLES } from '@/constants/theme';
 
 export default function ContactSection() {
   return (
@@ -32,7 +32,7 @@ export default function ContactSection() {
           </a>
           <a
             href={`mailto:${PERSONAL_INFO.email}?subject=Contato do Portfolio&body=Olá Daniel,%0D%0A%0D%0AEstou interessado em conversar sobre...`}
-            className="flex items-center gap-2 px-6 py-3 bg-[var(--accent-secondary)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] transition-all"
+            className={`flex items-center gap-2 px-6 py-3 bg-[var(--accent-secondary)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] transition-all ${FOCUS_STYLES}`}
             aria-label="Enviar mensagem"
           >
             Enviar Mensagem

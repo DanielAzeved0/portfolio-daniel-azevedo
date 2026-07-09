@@ -1,5 +1,5 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
-import { BUTTON_STYLES } from '@/constants/theme';
+import { BUTTON_STYLES, FOCUS_STYLES } from '@/constants/theme';
 import { classNames } from './classNames';
 
 type LinkButtonVariant = 'primary' | 'outline' | 'dark' | 'ghost';
@@ -8,7 +8,7 @@ const variantClasses: Record<LinkButtonVariant, string> = {
   primary: BUTTON_STYLES.primary,
   outline: BUTTON_STYLES.outline,
   ghost: BUTTON_STYLES.ghost,
-  dark: 'px-6 py-3 bg-[var(--foreground)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] transition-all',
+  dark: `px-6 py-3 bg-[var(--foreground)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] transition-all ${FOCUS_STYLES}`,
 };
 
 type LinkButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {

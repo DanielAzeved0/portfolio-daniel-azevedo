@@ -5,6 +5,8 @@
   --foreground: #333333;
   --accent-primary: #4A90E2;
   --accent-secondary: #00B0FF;
+  --focus-ring: #005FCC;
+  --focus-ring-soft: rgba(0, 95, 204, 0.24);
 }
 
 @theme inline {
@@ -31,6 +33,12 @@ html {
   scroll-behavior: smooth;
 }
 
+:where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px var(--focus-ring-soft);
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -44,4 +52,23 @@ html {
 
 .animate-fade-in {
   animation: fade-in 1s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .animate-fade-in {
+    animation: none;
+  }
 }

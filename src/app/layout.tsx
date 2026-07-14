@@ -16,6 +16,13 @@ const geistMono = Geist_Mono({
 const siteDescription =
   'Portfólio de Daniel da Silva Azevedo, Desenvolvedor Full Stack com experiência em suporte, infraestrutura de TI, redes, automação e projetos com React, Next.js, React Native, .NET, C# e Python.';
 
+const socialImage = {
+  url: '/og-image.png',
+  width: 1200,
+  height: 630,
+  alt: 'Portfólio profissional de Daniel Azevedo, Desenvolvedor Full Stack com suporte e infraestrutura de TI.',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(PERSONAL_INFO.portfolioUrl),
   title: {
@@ -53,11 +60,13 @@ export const metadata: Metadata = {
     siteName: 'Portfólio Daniel Azevedo',
     title: 'Daniel Azevedo | Desenvolvedor Full Stack',
     description: siteDescription,
+    images: [socialImage],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Daniel Azevedo | Desenvolvedor Full Stack',
     description: siteDescription,
+    images: [socialImage],
   },
   robots: {
     index: true,

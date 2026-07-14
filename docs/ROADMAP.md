@@ -243,7 +243,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 5.1 - Adicionar imagem Open Graph
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Melhorar aparência do portfólio ao compartilhar links.
 

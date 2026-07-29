@@ -54,14 +54,14 @@ O portfólio atualmente destaca:
 
 ## Tecnologias Utilizadas
 
-| Tecnologia | Versão | Uso no projeto |
-| --- | --- | --- |
-| Next.js | 16.1.0 | Framework React com App Router |
-| React | 19.2.1 | Construção da interface |
-| TypeScript | 5 | Tipagem estática |
-| Tailwind CSS | 4 | Estilização responsiva |
-| Next Font | Integrado ao Next.js | Otimização das fontes Geist e Geist Mono |
-| Vercel | - | Deploy do portfólio |
+| Tecnologia   | Versão               | Uso no projeto                           |
+| ------------ | -------------------- | ---------------------------------------- |
+| Next.js      | 16.1.0               | Framework React com App Router           |
+| React        | 19.2.1               | Construção da interface                  |
+| TypeScript   | 5                    | Tipagem estática                         |
+| Tailwind CSS | 4                    | Estilização responsiva                   |
+| Next Font    | Integrado ao Next.js | Otimização das fontes Geist e Geist Mono |
+| Vercel       | -                    | Deploy do portfólio                      |
 
 ---
 
@@ -165,7 +165,7 @@ Principais recursos:
 - Automações operacionais com PowerShell.
 - Base estruturada para rotinas de segurança.
 
-Repositório: [it-center-security-cloud](https://github.com/DanielAzeved0/it-center-security-cloud)
+Repositório: privado
 
 ### DeepArchive-Bridge
 

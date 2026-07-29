@@ -2,12 +2,12 @@
 
 export const COLORS = {
   // Cores principais
-  dark: '#333333',        // Cinza quase preto
-  light: '#E0E0E0',       // Cinza claro
-  primary: '#4A90E2',     // Azul moderno suave
-  secondary: '#00B0FF',   // Azul ciano vibrante
-  white: '#FFFFFF',
-  
+  dark: "#333333", // Cinza quase preto
+  light: "#E0E0E0", // Cinza claro
+  primary: "#4A90E2", // Azul moderno suave
+  secondary: "#00B0FF", // Azul ciano vibrante
+  white: "#FFFFFF",
+
   // Opacidades
   darkOpacity: (opacity: number) => `rgba(51, 51, 51, ${opacity})`,
   lightOpacity: (opacity: number) => `rgba(224, 224, 224, ${opacity})`,
@@ -17,7 +17,7 @@ export const COLORS = {
 
 // Classes Tailwind reutilizáveis
 export const FOCUS_STYLES =
-  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)] focus-visible:ring-4 focus-visible:ring-[var(--focus-ring-soft)]';
+  "focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)] focus-visible:ring-4 focus-visible:ring-[var(--focus-ring-soft)]";
 
 export const BUTTON_STYLES = {
   primary: `px-8 py-3 bg-[var(--accent-secondary)] text-white rounded-full font-semibold hover:bg-[var(--accent-primary)] hover:shadow-lg transition-all ${FOCUS_STYLES}`,
@@ -26,7 +26,8 @@ export const BUTTON_STYLES = {
 };
 
 export const SECTION_STYLES = {
-  title: 'text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-[var(--accent-primary)]',
-  container: 'py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8',
-  card: 'bg-white p-8 rounded-2xl border border-[rgba(51,51,51,0.1)] shadow-lg',
+  title:
+    "text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-[var(--accent-primary)]",
+  container: "py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8",
+  card: "bg-white p-8 rounded-2xl border border-[rgba(51,51,51,0.1)] shadow-lg",
 };

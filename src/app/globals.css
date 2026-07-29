@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #E0E0E0;
+  --background: #e0e0e0;
   --foreground: #333333;
-  --accent-primary: #4A90E2;
-  --accent-secondary: #00B0FF;
-  --focus-ring: #005FCC;
+  --accent-primary: #4a90e2;
+  --accent-secondary: #00b0ff;
+  --focus-ring: #005fcc;
   --focus-ring-soft: rgba(0, 95, 204, 0.24);
 }
 
@@ -18,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #E0E0E0;
+    --background: #e0e0e0;
     --foreground: #333333;
   }
 }
@@ -26,7 +26,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-family:
+    var(--font-geist-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
 html {

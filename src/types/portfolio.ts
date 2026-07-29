@@ -28,7 +28,7 @@ export interface Project {
   description: string;
   features: string[];
   technologies: string[];
-  githubUrl: string;
+  githubUrl?: string;
   deployUrl?: string;
   featured?: boolean;
 }

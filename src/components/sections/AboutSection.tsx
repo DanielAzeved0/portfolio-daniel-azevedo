@@ -1,5 +1,5 @@
-import { ABOUT_TEXT } from '@/constants/data';
-import { SECTION_STYLES } from '@/constants/theme';
+import { ABOUT_TEXT } from "@/constants/data";
+import { SECTION_STYLES } from "@/constants/theme";
 
 export default function AboutSection() {
   return (

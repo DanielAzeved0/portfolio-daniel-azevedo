@@ -1,7 +1,7 @@
-import ProjectCard from '@/components/ProjectCard';
-import Section from '@/components/ui/Section';
-import { PROJECTS } from '@/constants/data';
-import { SECTION_STYLES } from '@/constants/theme';
+import ProjectCard from "@/components/ProjectCard";
+import Section from "@/components/ui/Section";
+import { PROJECTS } from "@/constants/data";
+import { SECTION_STYLES } from "@/constants/theme";
 
 export default function ProjectsSection() {
   return (

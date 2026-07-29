@@ -1,8 +1,8 @@
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
-import { BUTTON_STYLES, FOCUS_STYLES } from '@/constants/theme';
-import { classNames } from './classNames';
+import type { AnchorHTMLAttributes, ReactNode } from "react";
+import { BUTTON_STYLES, FOCUS_STYLES } from "@/constants/theme";
+import { classNames } from "./classNames";
 
-type LinkButtonVariant = 'primary' | 'outline' | 'dark' | 'ghost';
+type LinkButtonVariant = "primary" | "outline" | "dark" | "ghost";
 
 const variantClasses: Record<LinkButtonVariant, string> = {
   primary: BUTTON_STYLES.primary,
@@ -19,7 +19,7 @@ type LinkButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 export default function LinkButton({
   children,
   className,
-  variant = 'primary',
+  variant = "primary",
   ...props
 }: LinkButtonProps) {
   return (

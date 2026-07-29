@@ -363,7 +363,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 6.3 - Corrigir codificação dos arquivos de documentação
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Garantir que os textos da documentação sejam exibidos corretamente em português, sem caracteres quebrados como `PortfÃ³lio`, `CorreÃ§Ãµes` ou `nÃ£o`.
 

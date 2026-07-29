@@ -344,7 +344,7 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 
 ### Task 6.2 - Checklist de publicação
 
-**Status:** [ ]
+**Status:** [x]
 
 **Objetivo:** Garantir que a versão final esteja pronta para produção.
 

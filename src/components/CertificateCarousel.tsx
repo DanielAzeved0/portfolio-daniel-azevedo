@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { PointerEvent, KeyboardEvent } from "react";
+import type { PointerEvent, KeyboardEvent, MouseEvent } from "react";
 import { FOCUS_STYLES } from "@/constants/theme";
 import type { Certification } from "@/types/portfolio";
 
@@ -12,6 +12,7 @@ interface CertificateCarouselProps {
 export default function CertificateCarousel({ certifications }: CertificateCarouselProps) {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const dragState = useRef({ active: false, dragging: false, startX: 0, scrollLeft: 0 });
+  const justDraggedRef = useRef(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -100,8 +101,19 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
       if (track && (e as any).pointerId && track.hasPointerCapture((e as any).pointerId))
         track.releasePointerCapture((e as any).pointerId);
     } catch {}
+    if (dragState.current.dragging) {
+      justDraggedRef.current = true;
+    }
     dragState.current.active = false;
     dragState.current.dragging = false;
+  };
+
+  const handleClickCapture = (e: MouseEvent<HTMLDivElement>) => {
+    if (justDraggedRef.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      justDraggedRef.current = false;
+    }
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -149,6 +161,7 @@ export default function CertificateCarousel({ certifications }: CertificateCarou
         onPointerMove={handlePointerMove}
         onPointerUp={stopDragging}
         onPointerCancel={stopDragging}
+        onClickCapture={handleClickCapture}
         onKeyDown={handleKeyDown}
         role="region"
         aria-roledescription="carousel"

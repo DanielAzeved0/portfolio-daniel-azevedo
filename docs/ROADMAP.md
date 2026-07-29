@@ -379,3 +379,266 @@ Evoluir o portfólio para uma versão mais profissional, responsiva, acessível 
 - A documentação exibe acentos e caracteres especiais corretamente.
 - Não há ocorrências visíveis de texto quebrado por codificação.
 - O Git registra apenas alterações intencionais de documentação.
+
+## Fase 7 - Qualidade de Código (Code Review)
+
+Tarefas levantadas em revisão de código completa do projeto (arquitetura, componentes, funções e manutenibilidade), realizada após o fechamento da Fase 6.
+
+### Task 7.1 - Corrigir clique acidental após arrastar o carrossel de certificados
+
+**Status:** [x]
+
+**Objetivo:** Evitar que soltar o arraste do carrossel em cima de um link dispare navegação indesejada.
+
+**Escopo:**
+
+- Em `src/components/CertificateCarousel.tsx`, `stopDragging` (linhas 97-105) zera `dragState.current.dragging` de forma síncrona no `pointerup`, antes do evento `click` nativo disparar, então o clique não é suprimido quando o usuário solta o arraste sobre o link "Ver certificado" (linha 197).
+- Adicionar um `onClickCapture` no track que verifique se houve arraste (ex: um ref `justDragged`) e chame `preventDefault`/`stopPropagation` nesse caso, resetando a flag após o clique ser interceptado.
+
+**Critérios de aceite:**
+
+- Arrastar o carrossel e soltar sobre um card ou link não abre mais o certificado.
+- Um clique real (sem arraste) sobre "Ver certificado" continua abrindo o link normalmente.
+- Navegação por teclado e pelos botões de seta continuam funcionando sem alteração.
+
+### Task 7.2 - Remover casts `as any` desnecessários no carrossel
+
+**Status:** [ ]
+
+**Objetivo:** Restaurar a segurança de tipos no tratamento de eventos de ponteiro do carrossel.
+
+**Escopo:**
+
+- Em `src/components/CertificateCarousel.tsx`, remover `(e as any).pointerId` nas linhas 83, 100 e 101.
+- `React.PointerEvent` já tipa `pointerId: number` nativamente; usar `e.pointerId` diretamente.
+
+**Critérios de aceite:**
+
+- Nenhum uso de `as any` restante no arquivo.
+- `npm.cmd run type-check` e `npm.cmd run lint` continuam passando.
+- Comportamento de arraste/drag do carrossel não muda.
+
+### Task 7.3 - Extrair ícone do GitHub duplicado
+
+**Status:** [ ]
+
+**Objetivo:** Eliminar duplicação de SVG que pode gerar inconsistência futura.
+
+**Escopo:**
+
+- O `<svg>` do ícone do GitHub está duplicado, byte a byte, em `src/components/ProjectCard.tsx` (linhas 92-98) e `src/components/sections/ContactSection.tsx` (linhas 42-48).
+- Criar `src/components/icons/GitHubIcon.tsx` (ou local equivalente) e usar em ambos os lugares.
+
+**Critérios de aceite:**
+
+- O ícone do GitHub existe em um único lugar no código-fonte.
+- Nenhuma mudança visual nos dois locais que o utilizam.
+
+### Task 7.4 - Remover ou aproveitar tokens de cor não utilizados em `theme.ts`
+
+**Status:** [ ]
+
+**Objetivo:** Eliminar código morto ou torná-lo efetivamente utilizável.
+
+**Escopo:**
+
+- `COLORS` e as funções `darkOpacity`/`lightOpacity`/`primaryOpacity`/`secondaryOpacity` em `src/constants/theme.ts` (linhas 3-16) não são referenciadas em nenhum outro arquivo do projeto (confirmado via busca no código).
+- Decidir entre: (a) remover esse bloco morto, já que o Tailwind não consegue consumir valores calculados em runtime dentro de `className`; ou (b) reaproveitá-lo de fato em algum `style={{}}` inline onde fizer sentido.
+
+**Critérios de aceite:**
+
+- `theme.ts` não contém exportações sem nenhum uso no projeto.
+- `npm.cmd run check` continua passando.
+
+### Task 7.5 - Corrigir ou remover o bloco de dark mode não funcional
+
+**Status:** [ ]
+
+**Objetivo:** Resolver a inconsistência do CSS de dark mode que hoje não faz nada.
+
+**Escopo:**
+
+- Em `src/app/globals.css` (linhas 19-24), o bloco `@media (prefers-color-scheme: dark)` redefine `--background`/`--foreground` com os mesmos valores já definidos no `:root` claro — ou seja, não tem efeito nenhum.
+- Decidir entre: (a) remover o bloco, deixando claro que o site não suporta dark mode; ou (b) implementar valores de fato diferentes para o tema escuro.
+
+**Critérios de aceite:**
+
+- O comportamento em `prefers-color-scheme: dark` é intencional e documentado (removido ou implementado de verdade).
+- Nenhuma regressão visual no tema claro (padrão atual do site).
+
+### Task 7.6 - Adicionar campo `id` em `Experience` e `Education`
+
+**Status:** [ ]
+
+**Objetivo:** Deixar as chaves de listagem React mais robustas, alinhadas com `Project` e `Certification`.
+
+**Escopo:**
+
+- Adicionar `id: string` aos tipos `Experience` e `Education` em `src/types/portfolio.ts`.
+- Preencher `id` nos dados de `src/constants/experience.ts` e `src/constants/education.ts`.
+- Atualizar as `key` usadas em `ExperienceSection.tsx` e `EducationSection.tsx` para usar o novo `id` em vez de chaves compostas (`${experience.company}-${experience.role}` e `${education.degree}-${education.period}`).
+
+**Critérios de aceite:**
+
+- `Experience` e `Education` têm `id` único e estável.
+- As listagens continuam renderizando corretamente, sem warnings de key duplicada.
+- `npm.cmd run type-check` passa.
+
+### Task 7.7 - Centralizar variante "dark" do `LinkButton` em `theme.ts`
+
+**Status:** [ ]
+
+**Objetivo:** Manter todos os tokens de botão no mesmo lugar.
+
+**Escopo:**
+
+- A variante `dark` do `LinkButton` (`src/components/ui/LinkButton.tsx`, linha 11) está definida localmente, fora de `BUTTON_STYLES` em `src/constants/theme.ts`, diferente das variantes `primary`, `outline` e `ghost`.
+- Mover a definição para `BUTTON_STYLES.dark` em `theme.ts` e referenciar a partir de `LinkButton.tsx`.
+
+**Critérios de aceite:**
+
+- Todas as variantes de botão (`primary`, `outline`, `ghost`, `dark`) vivem em `BUTTON_STYLES`.
+- Nenhuma mudança visual no botão "Ver Projeto" (único uso do variant `dark` hoje).
+
+### Task 7.8 - Corrigir encoding do `mailto` em `ContactSection`
+
+**Status:** [ ]
+
+**Objetivo:** Garantir que o link "Enviar Mensagem" gere um `mailto` válido conforme RFC 6068.
+
+**Escopo:**
+
+- Em `src/components/sections/ContactSection.tsx` (linha 64), `subject=Contato do Portfolio&body=Olá Daniel,...` usa espaços e acentos sem `encodeURIComponent`.
+- Envolver os valores de `subject` e `body` com `encodeURIComponent` antes de montar a URL do `mailto`.
+
+**Critérios de aceite:**
+
+- O link `mailto` gerado é uma URL válida (espaços e acentos corretamente codificados).
+- Abrir o link continua preenchendo assunto e corpo do email como esperado no cliente de email padrão.
+
+### Task 7.9 - Extrair função de slugify duplicada em `CertificateGroups`
+
+**Status:** [ ]
+
+**Objetivo:** Remover pequena duplicação de lógica.
+
+**Escopo:**
+
+- `category.replace(/\s+/g, "-").toLowerCase()` aparece duas vezes em `src/components/CertificateGroups.tsx` (linhas 26 e 50).
+- Extrair para uma função utilitária pequena (ex: `slugify` em `src/components/ui/classNames.ts` ou arquivo próprio) e usar nos dois lugares.
+
+**Critérios de aceite:**
+
+- A lógica de slug aparece definida uma única vez.
+- IDs e `aria-labelledby` do carrossel de certificados continuam batendo (sem regressão de acessibilidade).
+
+## Fase 8 - Migração para Componentes Base
+
+Divisão da antiga Task 7.3 em uma migração por seção, já que cada uma é uma mudança independente.
+
+### Task 8.1 - Migrar AboutSection para o componente Section
+
+**Status:** [ ]
+
+**Objetivo:** Padronizar o container da seção "Sobre Mim" usando o componente base já existente.
+
+**Escopo:**
+
+- Substituir `<section>` cru + `SECTION_STYLES.container` concatenado em `src/components/sections/AboutSection.tsx` pelo componente `Section`.
+- Preservar o `id="about"` e o conteúdo atual (título e card com os dois parágrafos).
+
+**Critérios de aceite:**
+
+- `AboutSection` usa `Section` como container principal.
+- Visual da seção "Sobre Mim" não muda perceptivelmente.
+- `npm.cmd run check` passa.
+
+### Task 8.2 - Migrar EducationSection para Section e Card
+
+**Status:** [ ]
+
+**Objetivo:** Padronizar a seção de Formação e Certificações usando os componentes base.
+
+**Escopo:**
+
+- Substituir `<section>` cru por `Section` em `src/components/sections/EducationSection.tsx`.
+- Substituir o markup manual do card de formação acadêmica (bordas, sombra, ícone, linhas 15-49) pelo componente `Card`.
+- Manter o restante da seção (título "Certificações", `CertificateGroups`) sem alterações.
+
+**Critérios de aceite:**
+
+- `EducationSection` usa `Section` e `Card`.
+- Visual dos cards de formação acadêmica é preservado.
+- `npm.cmd run check` passa.
+
+### Task 8.3 - Migrar ContactSection para usar LinkButton
+
+**Status:** [ ]
+
+**Objetivo:** Padronizar os links de contato usando o componente reutilizável.
+
+**Escopo:**
+
+- Substituir `<a className={BUTTON_STYLES.ghost}>` cru em `src/components/sections/ContactSection.tsx` pelo componente `LinkButton` (variant `ghost`).
+- Avaliar se o CTA "Enviar Mensagem" também deve migrar para `LinkButton` (hoje usa uma classe inline separada).
+
+**Critérios de aceite:**
+
+- Nenhum link de ação em `ContactSection` usa `BUTTON_STYLES` diretamente fora do `LinkButton`.
+- Visual e comportamento dos links (Email, GitHub, LinkedIn, Enviar Mensagem) são preservados.
+- `npm.cmd run check` passa.
+
+## Fase 9 - Testes Automatizados
+
+Divisão da antiga Task 7.11 em setup de ferramenta + uma suíte de testes por componente.
+
+### Task 9.1 - Configurar ferramenta de testes
+
+**Status:** [ ]
+
+**Objetivo:** Preparar a infraestrutura de testes do projeto.
+
+**Escopo:**
+
+- Avaliar e configurar Vitest ou Jest + Testing Library, compatível com Next.js 16 / React 19.
+- Adicionar script `test` no `package.json`.
+- Configurar arquivo de setup (ex: `vitest.config.ts` ou `jest.config.ts`) e ambiente jsdom, incluindo o alias `@/*` do projeto.
+
+**Critérios de aceite:**
+
+- `npm.cmd run test` executa a suíte (mesmo que vazia) sem erros.
+- Ferramenta escolhida integra com TypeScript e o alias `@/*` do projeto.
+
+### Task 9.2 - Testes para CertificateCarousel
+
+**Status:** [ ]
+
+**Objetivo:** Cobrir o componente mais complexo e mais retrabalhado do projeto.
+
+**Escopo:**
+
+- Testar navegação por teclado (setas esquerda/direita).
+- Testar os botões "Certificado anterior"/"Próximo certificado", incluindo estados `disabled` nos extremos.
+- Testar que o link "Ver certificado" não é acionado quando há arraste (cobre a correção da Task 7.1).
+
+**Critérios de aceite:**
+
+- Testes cobrem os cenários acima e passam em `npm.cmd run test`.
+- Falhas de regressão nesse componente passam a ser detectadas automaticamente.
+
+### Task 9.3 - Testes para CertificateGroups
+
+**Status:** [ ]
+
+**Objetivo:** Cobrir a lógica de agrupamento e troca de categoria de certificados.
+
+**Escopo:**
+
+- Testar a troca de categoria ativa ao clicar nas tabs.
+- Testar que o carrossel reseta o slide ativo ao trocar de categoria (via `key`).
+- Testar o estado de "Nenhum certificado encontrado para esta categoria" quando aplicável.
+
+**Critérios de aceite:**
+
+- Testes cobrem os cenários acima e passam em `npm.cmd run test`.
+- `npm.cmd run check` (ou script equivalente) passa a incluir a execução dos testes, se fizer sentido.
